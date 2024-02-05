@@ -8,9 +8,10 @@ let app = express();
 
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const doteenv = require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 const session = require('express-session');
+
 app.use(session({
     secret: 'some secret',
     cookies: 'maxAge: 30000',
@@ -26,21 +27,31 @@ const path = require('path');
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-
 const mongoose = require('mongoose');
-const config = require('./config/db'); // Adjust the path accordingly
 
+const dbUri= require('./config/db'); 
 
 // Connect to MongoDB Atlas Database
-mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('MongoDB Connected')).catch((err) => console.error('Error connecting to MongoDB:', err));
+mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+    console.log('Connected to MongoDB');
+});
 
-// Your other server setup and routes go here...
+// mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{ 
+//     console.log("Database connected"); 
+//  }).catch((e)=>{ 
+//     console.log(e); 
+//     console.log("Database is not connected"); 
+//  })
+  
 app.use('/', require('./routes/userRoute'));
 app.use('/product', require('./routes/productRoute'));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-    console.log('Successfully Connected');
+    // console.log('Successfully Connected');
     console.log(`http://localhost:${port}/`);
 });
 
