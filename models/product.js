@@ -21,11 +21,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: false
     },
-    product_category: {
-        type: String,
-        required: true,
-        unique: false
-    },
+
     primary_image: {
         type: String,
         required: true,
@@ -33,7 +29,12 @@ const productSchema = new mongoose.Schema({
     },
     category_image: {
         type: String,
-        required: true,
+        required: false,
+        unique: false
+    },
+    category_name: {
+        type: String,
+        required: false,
         unique: false
     },
     secondary_image: {
@@ -77,11 +78,7 @@ const productSchema = new mongoose.Schema({
         required: false,
         unique: false
     },
-    quantitys: {
-        type: Number,
-        required: false,
-        unique: false
-    },
+
     old_price: {
         type: Number,
         required: false,
@@ -97,7 +94,7 @@ const productSchema = new mongoose.Schema({
         required: false,
         unique: false
     },
-    uc_code: {
+    upc_code: {
         type: Number,
         required: false,
         unique: false

@@ -55,6 +55,10 @@ const Customerschema = new mongoose.Schema({
         required: true,
         unique: false
     },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
 
 });
 

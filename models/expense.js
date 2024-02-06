@@ -31,6 +31,10 @@ let expenseSchema = new mongoose.Schema({
         required: false,
         unique: false,
     },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
 
 
 });

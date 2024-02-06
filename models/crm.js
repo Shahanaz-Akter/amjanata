@@ -12,7 +12,11 @@ const crmSchema = new mongoose.Schema({
         type: [String],
         required: false,
         unique: false,
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
 });
 
 
