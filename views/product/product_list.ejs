@@ -66,7 +66,7 @@
                                     <span>></span>
                                     <span>Product List </span>
                                     <span>
-                                        <a href="/product/add_product">
+                                        <a href="/product/manual_add_product">
                                             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                                 <path d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z" />
                                             </svg>
@@ -79,81 +79,97 @@
                                 <thead>
                                     <tr>
                                         <th><input type="checkbox" id="select-all-checkbox"></th>
-                                        <th>SL</th>
+                                        <!-- <th>SL</th> -->
+                                        <th>SKU_code</th>
+                                        <th>UPC_code</th>
+                                        <th>Primary_Img</th>
+                                        <th>Category_Img</th>
+                                        <th>Secondary_Img</th>
                                         <th>Name</th>
                                         <th>Category</th>
-                                        <th>Buying Price</th>
-                                        <th>Selling Price</th>
+                                        <th>Buying_Price</th>
+                                        <th>Selling_Price</th>
+                                        <th>Price</th>
                                         <th>Discount</th>
                                         <th>Date</th>
-                                        <th>Total Qty</th>
-                                        <th>Primary Img</th>
-                                        <th>Category Img</th>
-                                        <th>Secondary Img</th>
-                                        <th>Product Code</th>
-                                        <th>Product Type</th>
-                                        <th>CoVariants</th>
-                                        <th>SiVariants</th>
+                                        <th>Total_Qty</th>
+                                        <th>Old_price</th>
+                                        <th>Product_Code</th>
+                                        <th>Product_Type</th>
                                         <th>Description</th>
-                                        <!-- <th>Quantitys</th> -->
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
 
+                                    <%products.forEach(objects=>{%>
                                         <tr>
                                             <td><input type="checkbox" class="row-checkbox"></td>
+                                            <!-- <td>
+                                                <%=objects.id%>
+                                            </td> -->
                                             <td>
-                                            sku code
+                                                <%=objects.sku_code%>
                                             </td>
                                             <td>
-                                               product name
+                                                <%=objects.upc_code%>
                                             </td>
                                             <td>
-                                               product ctegory
-                                            </td>
-                                            <td>
-                                                565665                                            
-                                               
-                                            <td>
-                                                8885                                            
-                                            </td>
-                                            <td>
-                                              30%                                            
-
-                                            <td>
-                                                02-02-24
-                                            </td>
-
-                                            <td>
-                                                70
-                                            </td>
-                                            <td>
-                                                <div class="" style="background: url('../../front_assets/img/product-images/01.jpg');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;">
+                                                <div class="" style="background: url('<%=objects.primary_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;">
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="" style="background: url('../../front_assets/img/product-images/01.jpg');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;">
+                                                <div class="" style="background: url('<%=objects.category_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;">
                                                 </div>
                                             </td>
                                             <td>
-                                                <button class="btn btn-md btn-dark" data-bs-toggle="modal" data-bs-target="#secondary_image_list_22">
+                                                <button class="btn btn-md btn-dark" data-bs-toggle="modal" data-bs-target="#secondary_image_<%=objects.id%>">
                                                     S.Image List
                                                 </button>
-                                                </td>
+                                            </td>
+
                                             <td>
-                                               6565
+                                                <%=objects.name%>
+
+                                            <td>
+                                                <%=objects.category_name%>
                                             </td>
                                             <td>
-                                                yy
-                                            </td>
-                                            <td>Null</td>
-                                            <td>Null</td>
+                                                <%=objects.buying_price%>
+
                                             <td>
-                                                ddfff
+                                                <%=objects.selling_price%>
                                             </td>
-                                            <!-- <td>456</td> -->
+
+                                            <td>
+                                                <%=objects.price%>
+                                            </td>
+
+                                            <td>
+                                                <%=objects.discount%>
+
+                                            </td>
+                                            <td>
+                                                <%=objects.date%>
+
+                                            </td>
+                                            <td>
+                                                <%=objects.total_qty%>
+                                            </td>
+                                            <td>
+                                                <%=objects.old_price%>
+                                            </td>
+                                            <td>
+                                                <%=objects.product_code%>
+                                            </td>
+                                            <td>
+                                                <%=objects.product_type%>
+                                            </td>
+
+                                            <td>
+                                                <%=objects.description%>
+                                            </td>
                                             <td>
                                                 <div class="btn-group mb-2">
                                                     <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -182,7 +198,7 @@
                                         </tr>
 
                                         <!-- seondary_image_list modal -->
-                                        <div class="modal fade" id="secondary_image_list_22" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal fade" id="secondary_image_<%=objects.id%>" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-xl">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -194,31 +210,32 @@
 
                                                         <div class="row">
 
-                                                           
-                                                                        <div class="col-12 col-md-3 col-lg-3 col-xl-3 mb-2">
-                                                                            <div class="">
-                                                                               ggh
-                                                                            </div>
-                                                                            <div class="" style="background: url('../../public/front_assets/img/special-offer/01.webp');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 200px;width: auto;">
-                                                                            </div>
-                                                                            <!-- <img src="" alt="" height="150" width="150"> -->
-                                                                            <div>
-                                                                               ghghgh
-                                                                            </div>
+                                                            <% let img=objects.secondary_image %>
+
+                                                                <%img.forEach(images=>{%>
+                                                                    <div class="col-12 col-md-3 col-lg-3 col-xl-3 mb-2">
+                                                                        <div class="">
+                                                                            <%=objects.name%>
                                                                         </div>
-                                                                    
+                                                                        <div class="" style="background: url('<%=images%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 200px;width: auto;">
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <%});%>
+
                                                         </div>
 
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>                                       
+                                        </div>
+                                        <% });%>
                                 </tbody>
 
                             </table>
 
                         </div>
-                         <!-- container-fluid -->
+                        <!-- container-fluid -->
 
                     </div> <!-- content -->
 

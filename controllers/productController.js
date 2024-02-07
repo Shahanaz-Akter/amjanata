@@ -20,12 +20,13 @@ const Product = require('../models/product');
 
 
 const productList = async (req, res) => {
-    res.render('product/product_list.ejs');
+    let products = await Product.find({});
+    res.render('product/product_list.ejs', { products });
 }
 
 
 const category = async (req, res) => {
-    let upc_code = '0000';
+    let upc_code = '1201';
 
     let record = await Category.find({}); //all records
 
@@ -85,52 +86,83 @@ const addProduct = async (req, res) => {
     res.render('product/add_productt.ejs', { sku_code, upc_code, cate_name });
 };
 
+const manualAddProduct = async (req, res) => {
+    // console.log('hi');
+
+    let data = await Category.find({});
+    // console.log(data);
+
+    res.render('product/add_product.ejs', { data });
+};
+
+
 const postAddProduct = async (req, res) => {
-    const { sku_code, upc_code, name, category_name, product_type, buying_price, selling_price, discount, date, total_qty, price, old_price, description, colorVariants, sizeVariants } = req.body;
-    console.log(req.files);
-
-    let sec_img = [];
-    let img = req.files['secondary_image'];
-
-    if (img) { // Check if files exist
-        img.forEach(element => {
-            // console.log('/front_assets/new_images/' + element.filename);
-            sec_img.push('/front_assets/new_images/' + element.filename);
-        });
-    } else {
-        console.log('No files uploaded with the name "secondary_image"');
-    }
-    let result = {
-        'sku_code': sku_code,
-        'upc_code': upc_code,
-        'name': name,
-        'category_name': category_name,
-        'product_type': product_type,
-        'buying_price': buying_price,
-        'selling_price': selling_price,
-        'discount': discount,
-        'date': date,
-        'total_qty': total_qty,
-        'price': price,
-        'category_image': '/front_assets/new_images/' + req.files['category_image'][0].filename,
-        'old_price': old_price,
-        'primary_image': '/front_assets/new_images/' + req.files['primary_image'][0].filename,
-        'secondary_image': sec_img,
-        'description': description,
-        'colorVariants': colorVariants,
-        'sizeVariants': sizeVariants,
-        'product_code': Math.floor(Math.random() * 1000) + 1,
-    }
-    console.log(result);
-
     try {
+        const { sku_code, upc_code, name, category_name, product_type, buying_price, selling_price, discount, date, total_qty, price, old_price, description, colorVariants, sizeVariants } = req.body;
+        let sec_img = [];
+        let img = req.files['secondary_image'];
+
+        if (img) {
+            img.forEach(element => {
+                // console.log('/front_assets/new_images/' + element.filename);
+                sec_img.push('/front_assets/new_images/' + element.filename);
+            });
+        } else {
+            console.log('No files uploaded with the name "secondary_image"');
+        }
+        let result = {
+            'sku_code': sku_code,
+            'upc_code': upc_code,
+            'name': name,
+            'category_name': category_name,
+            'product_type': product_type,
+            'buying_price': buying_price,
+            'selling_price': selling_price,
+            'discount': discount,
+            'date': date,
+            'total_qty': total_qty,
+            'price': price,
+            'category_image': '/front_assets/new_images/' + req.files['category_image'][0].filename,
+            'old_price': old_price,
+            'primary_image': '/front_assets/new_images/' + req.files['primary_image'][0].filename,
+            'secondary_image': sec_img,
+            'description': description,
+            'colorVariants': colorVariants,
+            'sizeVariants': sizeVariants,
+            'product_code': Math.floor(Math.random() * 1000) + 1,
+        }
+        // console.log(result);
+
         await Product.create(result);
-    }
-    catch (err) {
-        console.log(err);
+        res.redirect('/product/product_list');
     }
 
-    res.redirect('/product/product_list');
+    catch (err) {
+        console.log("Error: ", err);
+    }
+
 }
 
-module.exports = { productList, category, postAddProduct, addProduct, postCategory }
+
+
+const getCategory = async (req, res) => {
+    try {
+        let { tagInnerText } = req.body;
+        // console.log(tagInnerText);
+
+        let category = await Category.findOne({ category_name: tagInnerText });
+        let upc_code = category.upc_code;
+        // Fetch category data from the database here
+
+        res.send({
+            success: true,
+            u_code: upc_code,
+        });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+}
+
+
+module.exports = { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory }

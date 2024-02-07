@@ -986,14 +986,14 @@
                                     <div class="col-12 col-md-3 col-lg-3 col-xl-3 mb-2">
                                         <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                             <label>SKU Code</label>
-                                            <input type="text" class="form-control" value="<%=sku_code%>" disabled name="sku_code" onkeypress="return event.keyCode != 13;">
+                                            <input type="text" class="form-control" id="sku" value="" readonly name="sku_code" onkeypress="return event.keyCode != 13;">
                                         </div>
                                     </div>
 
                                     <div class="col-12 col-md-3 col-lg-3 col-xl-3 mb-2">
                                         <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                             <label>UPC code</label>
-                                            <input disabled type="text" class="form-control" value="<%=upc_code%>" name="upc_code" onkeypress="return event.keyCode != 13;">
+                                            <input readonly type="text" class="form-control" id="upc" value="" name="upc_code" onkeypress="return event.keyCode != 13;">
                                         </div>
                                     </div>
 
@@ -1016,25 +1016,37 @@
                                             </div>
                                         </div>
 
+
+
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label class="" style="">Product Category</label>
                                                 <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
-                                                    <input required type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1000, null)" autocomplete="off" id="contentsTitleInput_1000" name="product_category" onkeypress="return event.keyCode != 13;">
+                                                    <input required type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1000, null)" autocomplete="off" id="contentsTitleInput_1000" name="category_name" onkeypress="return event.keyCode != 13;">
                                                     <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1000" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Mens and Boys Fashion</div>
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Kitchen & Dining</div>
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Health & Beauty</div>
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Baby & Kids</div>
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Shaver & Trimmer</div>
-                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Electronics</div>
-
+                                                        <% data.forEach(objects=>{ %>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
+                                                                <%=objects.category_name%>
+                                                            </div>
+                                                            <!-- <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Kitchen & Dining</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Health & Beauty</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Baby & Kids</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Shaver & Trimmer</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Electronics</div> -->
+                                                            <% });%>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+
+
+
+
+
+
 
 
 
@@ -1098,9 +1110,6 @@
                                         </div>
 
 
-
-
-
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="main-img-container mt-2">
                                                 <!-- <p>*All Image size should be 300/300.</p> -->
@@ -1109,11 +1118,7 @@
                                                 <label for="mainImg1" class="btn btn-dark mt-2">Category Image</label>
                                                 <input type="file" class="d-none" id="mainImg1" onchange="main_image_changed1(this,null)" name="category_image">
                                             </div>
-                                            <% if (error3) { %>
-                                                <p class="text-danger">
-                                                    <%= error3 %>
-                                                </p>
-                                                <% } %>
+
                                         </div>
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
@@ -1134,11 +1139,7 @@
                                                         id="main-img-preview">
                                                     <label for="mainImg" class="btn btn-dark mt-2">Set Primary Image</label>
                                                     <input type="file" class="d-none" id="mainImg" onchange="main_image_changed(this,null)" name="primary_image">
-                                                    <% if (error1) { %>
-                                                        <p class="text-danger mt-1">
-                                                            <%= error1 %>
-                                                        </p>
-                                                        <% } %>
+
                                                 </div>
                                             </div>
 
@@ -1150,11 +1151,7 @@
                                                 <div class="s-i-c-2">
                                                     <label for="secondaryImg" class="btn btn-dark"><i class="mdi mdi-plus"></i></label>
                                                     <input type="file" for="secondaryImg" class="d-none" id="secondaryImg" name="secondary_image" onchange="secondary_image_changed(this,null)" multiple>
-                                                    <% if (error2) { %>
-                                                        <p class="text-danger mt-2">
-                                                            <%= error2 %>
-                                                        </p>
-                                                        <% } %>
+
                                                 </div>
 
                                             </div>
@@ -1930,20 +1927,42 @@
             })
 
             function selectOption(tag, num) {
-
+                console.log(tag.innerText);
                 let textInput;
                 if (num) {
                     textInput = document.getElementById(`contentsTitleInput_${findInput}_${num}`);
                 }
                 else {
                     textInput = document.getElementById(`contentsTitleInput_${findInput}`);
-
                 }
-                let text = tag.textContent;
+                let text = tag.innerText;
+                console.log(text);
                 textInput.value = text;
 
                 let parent = tag.parentNode;
                 parent.classList.add("d-none");
+
+                let tagInnerText = tag.innerText.trim();
+                // console.log(tagInnerText);
+
+                let sku = document.querySelector('#sku');
+                let upc = document.querySelector('#upc');
+
+                axios.post('/product/get_category', { tagInnerText })
+                    .then(response => {
+                        console.log(response.data);
+                        if (response.data.success) {
+                            upc.value = response.data.u_code;
+                            let timestamp = Date.now().toString();
+                            sku.value = response.data.u_code + timestamp;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+
+
+
             }
 
 
@@ -2199,8 +2218,7 @@
             document.getElementById("date").min = currentDate;
         </script>
 
-
-
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </body>
 
