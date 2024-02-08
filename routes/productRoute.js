@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 // const multer = require('multer');
-const { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory } = require('../controllers/productController');
+const { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory, cms } = require('../controllers/productController');
 
 const upload = require('../multer');
 
@@ -20,6 +20,7 @@ router.post('/post_add_product', upload.fields([
 
 
 router.post('/get_category', getCategory);
+router.get('/cms', cms);
 
 
 module.exports = router;

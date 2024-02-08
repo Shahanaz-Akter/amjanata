@@ -1020,7 +1020,7 @@
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
-                                                <label class="" style="">Product Category</label>
+                                                <label class="" style="">Parent Category</label>
                                                 <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
                                                     <input required type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1000, null)" autocomplete="off" id="contentsTitleInput_1000" name="category_name" onkeypress="return event.keyCode != 13;">
                                                     <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1000" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
@@ -1042,14 +1042,28 @@
                                         </div>
 
 
-
-
-
-
-
-
-
-
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label class="" style="">Sub Category</label>
+                                                <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
+                                                    <input required type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1002, null)" autocomplete="off" id="contentsTitleInput_1002" name="sub_category" onkeypress="return event.keyCode != 13;">
+                                                    <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1002" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
+                                                        <% data.forEach(objects=>{ %>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
+                                                                <%=objects.sub_category%>
+                                                            </div>
+                                                            <!-- <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Kitchen & Dining</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Health & Beauty</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Baby & Kids</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Shaver & Trimmer</div>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Electronics</div> -->
+                                                            <% });%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
@@ -1109,6 +1123,13 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label>Old Price</label>
+                                                <input type="number" class="form-control" placeholder="00" name="old_price" onkeypress="return event.keyCode != 13;">
+                                            </div>
+                                        </div>
+
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="main-img-container mt-2">
@@ -1118,14 +1139,8 @@
                                                 <label for="mainImg1" class="btn btn-dark mt-2">Category Image</label>
                                                 <input type="file" class="d-none" id="mainImg1" onchange="main_image_changed1(this,null)" name="category_image">
                                             </div>
+                                        </div>
 
-                                        </div>
-                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
-                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
-                                                <label>Old Price</label>
-                                                <input type="number" class="form-control" placeholder="00" name="old_price" onkeypress="return event.keyCode != 13;">
-                                            </div>
-                                        </div>
 
                                     </div>
 

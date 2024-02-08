@@ -11,6 +11,10 @@ const categorySchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    sub_category: {
+        type: String,
+        required: false
+    },
     upc_code: {
         type: String,
         required: false,

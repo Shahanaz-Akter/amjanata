@@ -37,6 +37,12 @@ const productSchema = new mongoose.Schema({
         required: false,
         unique: false
     },
+
+    sub_category: {
+        type: String,
+        required: false,
+        unique: false
+    },
     secondary_image: {
         type: [String],
         required: true,

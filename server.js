@@ -29,7 +29,7 @@ app.set('view engine', 'ejs');
 
 const mongoose = require('mongoose');
 
-const dbUri= require('./config/db'); 
+const dbUri = require('./config/db');
 
 // Connect to MongoDB Atlas Database
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -45,9 +45,10 @@ db.once('open', () => {
 //     console.log(e); 
 //     console.log("Database is not connected"); 
 //  })
-  
+
 app.use('/', require('./routes/userRoute'));
 app.use('/product', require('./routes/productRoute'));
+app.use('/expense', require('./routes/expenseRoute'));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

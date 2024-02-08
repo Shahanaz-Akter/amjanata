@@ -1015,11 +1015,16 @@
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:1px">
-                                                <label class="form-label" style="">Category Name</label>
+                                                <label class="form-label" style="">Parent Category</label>
                                                 <input readonly type="text" class="form-control" value="<%=cate_name%>" name="category_name">
                                             </div>
                                         </div>
-
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:1px">
+                                                <label class="form-label" style="">Sub Category</label>
+                                                <input readonly type="text" class="form-control" value="<%=sub_cate_name%>" name="sub_category">
+                                            </div>
+                                        </div>
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
@@ -1075,6 +1080,13 @@
                                                 <input type="number" class="form-control" placeholder="400" name="price" onkeypress="return event.keyCode != 13;">
                                             </div>
                                         </div>
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label>Old Price</label>
+                                                <input type="number" class="form-control" placeholder="00" name="old_price" onkeypress="return event.keyCode != 13;">
+                                            </div>
+                                        </div>
+
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="main-img-container mt-2">
@@ -1086,12 +1098,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
-                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
-                                                <label>Old Price</label>
-                                                <input type="number" class="form-control" placeholder="00" name="old_price" onkeypress="return event.keyCode != 13;">
-                                            </div>
-                                        </div>
 
                                     </div>
 

@@ -56,11 +56,12 @@ const category = async (req, res) => {
 
 
 const postCategory = async (req, res) => {
-    let { category_name, upc_code } = req.body;
+    let { category_name, sub_category, upc_code } = req.body;
     try {
         let newCategory = await Category.create({
             category_image: '/front_assets/new_images/' + req.files['category_image'][0].filename,
             category_name: category_name,
+            sub_category: sub_category,
             upc_code: upc_code,
         });
         res.redirect('/product/category');
@@ -79,11 +80,12 @@ const addProduct = async (req, res) => {
     // console.log(data);
 
     let cate_name = data.category_name;
+    let sub_cate_name = data.sub_category;
     let upc_code = data.upc_code;
     let timestamp = Date.now().toString(); // Get the current timestamp as a string
     let sku_code = upc_code + timestamp;
 
-    res.render('product/add_productt.ejs', { sku_code, upc_code, cate_name });
+    res.render('product/add_productt.ejs', { sku_code, upc_code, cate_name, sub_cate_name });
 };
 
 const manualAddProduct = async (req, res) => {
@@ -98,7 +100,7 @@ const manualAddProduct = async (req, res) => {
 
 const postAddProduct = async (req, res) => {
     try {
-        const { sku_code, upc_code, name, category_name, product_type, buying_price, selling_price, discount, date, total_qty, price, old_price, description, colorVariants, sizeVariants } = req.body;
+        const { sku_code, upc_code, name, category_name, sub_category, product_type, buying_price, selling_price, discount, date, total_qty, price, old_price, description, colorVariants, sizeVariants } = req.body;
         let sec_img = [];
         let img = req.files['secondary_image'];
 
@@ -115,6 +117,7 @@ const postAddProduct = async (req, res) => {
             'upc_code': upc_code,
             'name': name,
             'category_name': category_name,
+            'sub_category': sub_category,
             'product_type': product_type,
             'buying_price': buying_price,
             'selling_price': selling_price,
@@ -164,5 +167,14 @@ const getCategory = async (req, res) => {
     }
 }
 
+const cms = async (req, res) => {
+    try {
+        // console.log('hello');
+        res.render('product/cms');
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+}
 
-module.exports = { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory }
+module.exports = { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory, cms }
