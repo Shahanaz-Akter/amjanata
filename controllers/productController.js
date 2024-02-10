@@ -167,14 +167,6 @@ const getCategory = async (req, res) => {
     }
 }
 
-const cms = async (req, res) => {
-    try {
-        // console.log('hello');
-        res.render('product/cms');
-    } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-}
 
-module.exports = { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory, cms }
+
+module.exports = { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory }

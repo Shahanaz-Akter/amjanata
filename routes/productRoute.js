@@ -20,7 +20,6 @@ router.post('/post_add_product', upload.fields([
 
 
 router.post('/get_category', getCategory);
-router.get('/cms', cms);
 
 
 module.exports = router;

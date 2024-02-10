@@ -1,18 +1,18 @@
+
 const mongoose = require('mongoose');
+const productcmsSchema = new mongoose.Schema({
 
-const crmSchema = new mongoose.Schema({
-
-    logo_image: {
+    coupon: {
         type: String,
         required: false,
         unique: false,
-
     },
-    banner_image: {
+    banner: {
         type: [String],
         required: false,
         unique: false,
     },
+
     createdAt: {
         type: Date,
         default: Date.now
@@ -21,5 +21,4 @@ const crmSchema = new mongoose.Schema({
 
 
 
-const Crm = mongoose.model('Crm', crmSchema);
-module.exports = Crm;
+module.exports = mongoose.model('productCms', productcmsSchema);
