@@ -49,8 +49,8 @@ db.once('open', () => {
 app.use('/', require('./routes/userRoute'));
 app.use('/product', require('./routes/productRoute'));
 app.use('/expense', require('./routes/expenseRoute'));
-app.use('/landingcms', require('./routes/landingCmsRoute'));
-app.use('/productcms', require('./routes/productCmsRoute'));
+app.use('/cms', require('./routes/cmsRoute'));
+// app.use('/productcms', require('./routes/productCmsRoute'));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

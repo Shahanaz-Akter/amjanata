@@ -3,16 +3,16 @@ const bodyParser = require('body-parser');
 
 const landingcms = require('../models/landingcms');
 
-const landingPageCms = async (req, res) => {
+const pageCms = async (req, res) => {
     try {
         // console.log('hello');
-        res.render('cms/landing_page_cms');
+        res.render('cms/page_cms');
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 }
-const postLandingCms = async (req, res) => {
+const postCms = async (req, res) => {
     try {
         // discount_image upper_banner logo_image feature_brands coupon_image deals_image crazy_deals
 
@@ -86,4 +86,4 @@ const cartCms = async (req, res) => {
 }
 
 
-module.exports = { landingPageCms, postLandingCms, productCms, socialCms, cartCms }
+module.exports = { pageCms, postCms, productCms, socialCms, cartCms }
