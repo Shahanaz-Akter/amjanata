@@ -1107,8 +1107,20 @@
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-4">
                                             <label for="date" class="form-label">Date</label>
-                                            <input class="form-control custom-date-input" id="date" type="date" name="date" placeholder="MM/DD/YYYY" pattern="\d{2}/\d{2}/\d{4}" min="">
+                                            <input class="form-control custom-date-input" value="" id="date" type="date" name="date" placeholder="MM/DD/YYYY" pattern="\d{2}/\d{2}/\d{4}" min="">
                                         </div>
+                                        <script>
+                                            // Get the current date
+                                            let currenDate = new Date();
+
+                                            // Format the date as YYYY-MM-DD (required format for input type="date")
+                                            let formattedDate = currenDate.toISOString().split('T')[0];
+
+                                            // Set the value of the input field
+                                            document.getElementById('date').value = formattedDate;
+
+                                        </script>
+
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
@@ -2205,6 +2217,9 @@
             };
 
         </script>
+        <!-- date setup js in min attributes -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
 
         <!-- hide and show enable checkbox -->
         <script>
@@ -2219,21 +2234,9 @@
 
         </script>
 
-        <!-- date setup js in min attributes -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
-
-        <script>
-            // Set the timezone to Bangladesh
-            moment.tz.setDefault("Asia/Dhaka");
-            // Get the current date in "YYYY-MM-DD" format
-            var currentDate = moment().format("YYYY-MM-DD");
-            console.log('currentDate', currentDate);
-            // Set the min attribute of the date input
-            document.getElementById("date").min = currentDate;
-        </script>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
 </body>
 

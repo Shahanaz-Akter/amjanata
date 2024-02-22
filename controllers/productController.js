@@ -59,7 +59,7 @@ const postCategory = async (req, res) => {
     let { category_name, sub_category, upc_code } = req.body;
     try {
         let newCategory = await Category.create({
-            category_image: '/front_assets/new_images/' + req.files['category_image'][0].filename,
+            category_image: req.files['category_image'] ? '/front_assets/new_images/' + req.files['category_image'][0].filename : null,
             category_name: category_name,
             sub_category: sub_category,
             upc_code: upc_code,
@@ -84,7 +84,6 @@ const addProduct = async (req, res) => {
     let upc_code = data.upc_code;
     let timestamp = Date.now().toString(); // Get the current timestamp as a string
     let sku_code = upc_code + timestamp;
-
     res.render('product/add_productt.ejs', { sku_code, upc_code, cate_name, sub_cate_name });
 };
 
@@ -96,7 +95,6 @@ const manualAddProduct = async (req, res) => {
 
     res.render('product/add_product.ejs', { data });
 };
-
 
 const postAddProduct = async (req, res) => {
     try {
@@ -125,9 +123,9 @@ const postAddProduct = async (req, res) => {
             'date': date,
             'total_qty': total_qty,
             'price': price,
-            'category_image': '/front_assets/new_images/' + req.files['category_image'][0].filename,
+            'category_image': req.files['category_image'] ? '/front_assets/new_images/' + req.files['category_image'][0].filename : null,
             'old_price': old_price,
-            'primary_image': '/front_assets/new_images/' + req.files['primary_image'][0].filename,
+            'primary_image': req.files['primary_image'] ? '/front_assets/new_images/' + req.files['primary_image'][0].filename : null,
             'secondary_image': sec_img,
             'description': description,
             'colorVariants': colorVariants,

@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema({
 
     primary_image: {
         type: String,
-        required: true,
+        required: false,
         unique: false
     },
     category_image: {
@@ -45,7 +45,7 @@ const productSchema = new mongoose.Schema({
     },
     secondary_image: {
         type: [String],
-        required: true,
+        required: false,
         unique: false
     },
     description: {
