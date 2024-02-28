@@ -25,6 +25,17 @@
   <link href="../../front_assets/css/dark-theme.css" rel="stylesheet">
 
   <title>Amjanata</title>
+  <style>
+    @media (max-width: 991px) {
+      .cls_ {
+        display: flex !important;
+        justify-content: center !important;
+        border: 2px solid blue !important;
+      }
+
+
+    }
+  </style>
 </head>
 
 <body class="container-fluid">
@@ -45,7 +56,7 @@
   <!--start top header-->
   <header class="mb-2 py-5 mx-sm-auto top-header">
     <nav class="navbar navbar-expand-md w-100 navbar-dark container-lg ">
-      <a class="navbar-brand d-none d-xl-inline" href="index.html"><img src="../../front_assets/img/logo.png" class="logo-img" alt=""></a>
+      <a class="navbar-brand d-none d-xl-inline" href="/"><img src="../../front_assets/img/logo.png" class="logo-img" alt=""></a>
       <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
         <i class="bi bi-list"></i>
       </a>
@@ -66,15 +77,23 @@
                 <i class="bi bi-caret-down-fill"></i>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/category">Grocery</a></li>
-                <li><a class="dropdown-item" href="/category">Mobiles</a></li>
-                <li><a class="dropdown-item" href="/category">Fashion</a></li>
-                <li><a class="dropdown-item" href="/category">Electronics</a></li>
-                <li><a class="dropdown-item" href="/category">Home & Furnitures</a></li>
-                <li><a class="dropdown-item" href="/category">Health</a></li>
-                <li><a class="dropdown-item" href="/category">Video Games</a></li>
-                <li><a class="dropdown-item" href="/category">Beauty,Toy and More</a></li>
-                <li><a class="dropdown-item" href="/category">Gift Cards</a></li>
+                <% category.forEach(cate=>{%>
+                  <li>
+                    <a class="dropdown-item" href="/category">
+                      <%=cate.parent_category%>
+                    </a>
+                  </li>
+                  <%});%>
+
+                    <!-- <li><a class="dropdown-item" href="/category">Grocery</a></li>
+                    <li><a class="dropdown-item" href="/category">Mobiles</a></li>
+                    <li><a class="dropdown-item" href="/category">Fashion</a></li>
+                    <li><a class="dropdown-item" href="/category">Electronics</a></li>
+                    <li><a class="dropdown-item" href="/category">Home & Furnitures</a></li>
+                    <li><a class="dropdown-item" href="/category">Health</a></li>
+                    <li><a class="dropdown-item" href="/category">Video Games</a></li>
+                    <li><a class="dropdown-item" href="/category">Beauty,Toy and More</a></li>
+                    <li><a class="dropdown-item" href="/category">Gift Cards</a></li> -->
               </ul>
             </div>
 
@@ -2334,7 +2353,7 @@
             <div class="row py-4 mx-3">
               <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
                 <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
-                  <img src="img/amjanata-pic-23/amjanata pic-01.png" class="card-img-top" alt="...">
+                  <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-01.png" class="card-img-top" alt="...">
                   <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                     <div class="text-danger position-relative" style="margin-bottom: 130px;">
                       <p class="mb-0 ps-3 position-absolute">Upto</p>
@@ -2349,7 +2368,7 @@
 
               <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
                 <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
-                  <img src="img/amjanata-pic-23/amjanata pic-02.png" class="card-img-top" alt="...">
+                  <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-02.png" class="card-img-top" alt="...">
                   <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                     <div class="text-danger position-relative" style="margin-bottom: 130px;">
                       <p class="mb-0 ps-3 position-absolute">Upto</p>
@@ -2364,7 +2383,7 @@
 
               <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
                 <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
-                  <img src="img/amjanata-pic-23/amjanata pic-03.png" class="card-img-top" alt="...">
+                  <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-03.png" class="card-img-top" alt="...">
                   <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                     <div class="text-danger position-relative" style="margin-bottom: 130px;">
                       <p class="mb-0 ps-3 position-absolute">Upto</p>
@@ -2379,7 +2398,7 @@
 
               <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
                 <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
-                  <img src="../../img/amjanata-pic-23/amjanata pic-04.png" class="card-img-top" alt="...">
+                  <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-04.png" class="card-img-top" alt="...">
                   <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                     <div class="text-danger position-relative" style="margin-bottom: 130px;">
                       <p class="mb-0 ps-3 position-absolute">Upto</p>
@@ -4312,13 +4331,13 @@
             </div>
             <div class="col">
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
-                <div class="align-items-center d-flex justify-content-center m-lg-3 m-sm-5 m-xl-4 m-xxl-5">
-                  <a href="javascript:;" class="m-3">
-                    <p class="fs-6 p-4 text-dark text-center " style="margin-bottom: 0px;">Clearance </p>
+                <div class="d-flex align-items-center">
+                  <a href="javascript:;">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-42.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
-              <p class="text-center">Pets</p>
+              <p class="text-center">Meow</p>
             </div>
           </div>
           <!--end row-->
@@ -4521,11 +4540,14 @@
   </div>
   <!--end page content-->
 
+
   <!--start footer-->
   <section class="footer-section bg-section-2 section-padding">
     <div class="container">
+
       <div class="row row-cols-1 row-cols-lg-4 g-4">
-        <div class="col d-flex d-md-block d-sm-flex justify-content-center">
+
+        <div class="col cls_ d-flex d-md-block d-sm-flex justify-content-center">
           <div class="footer-widget-7">
             <h5 class="mb-3 fw-bold">About Us</h5>
             <ul class="widget-link list-unstyled">
@@ -4544,7 +4566,7 @@
             </ul>
           </div>
         </div>
-        <div class="f-1 col d-flex d-md-block d-sm-flex justify-content-center">
+        <div class="f-1 cls_ col d-flex d-md-block d-sm-flex justify-content-center">
           <div class="footer-widget-7">
             <h5 class="mb-3 fw-bold">Help</h5>
             <ul class="widget-link list-unstyled">
@@ -4560,17 +4582,18 @@
             </ul>
           </div>
         </div>
-        <div class="f-2 col d-flex d-md-block d-sm-flex justify-content-center">
-          <div class="footer-widget-7">
+        <div class="f-2 cls_ col d-flex d-md-block d-sm-flex justify-content-center">
+          <div class="footer-widget-7 ms-4">
             <h5 class="mb-3 fw-bold">Stores</h5>
             <ul class="widget-link list-unstyled">
-              <li><a href="javascript:;"><img src="img/icons/amjanata icon-08.svg" alt="" style="width: 20px;">
+              <li>
+                <a href="javascript:;"><img src="img/icons/amjanata icon-08.svg" alt="" style="width: 20px;">
                   Location</a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="f-1 col d-flex d-md-block d-sm-flex justify-content-center">
+        <div class="f-1 cls_ col d-flex d-md-block d-sm-flex justify-content-center">
           <div class="footer-widget-7">
             <h5 class="mb-3 fw-bold">Services</h5>
             <ul class="widget-link list-unstyled">
@@ -4593,6 +4616,7 @@
             </ul>
           </div>
         </div>
+
         <!--end row-->
       </div>
       <div>

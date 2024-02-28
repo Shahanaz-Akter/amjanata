@@ -1009,24 +1009,16 @@
 
                                     <div class="col-12 col-md-12 col-lg-12 col-xl-6 row ">
 
-                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
-                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
-                                                <label>Product Name</label>
-                                                <input type="text" class="form-control" placeholder="HP Elite Book" name="name" onkeypress="return event.keyCode != 13;">
-                                            </div>
-                                        </div>
-
-
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label class="" style="">Parent Category</label>
                                                 <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
-                                                    <input required type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1000, null)" autocomplete="off" id="contentsTitleInput_1000" name="category_name" onkeypress="return event.keyCode != 13;">
+                                                    <input type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1000, null)" autocomplete="off" id="contentsTitleInput_1000" name="parent_category" onkeypress="return event.keyCode != 13;">
                                                     <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1000" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
                                                         <% data.forEach(objects=>{ %>
                                                             <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
-                                                                <%=objects.category_name%>
+                                                                <%=objects.parent_category%>
                                                             </div>
                                                             <!-- <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
                                                             <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
@@ -1046,7 +1038,7 @@
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label class="" style="">Sub Category</label>
                                                 <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
-                                                    <input required type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1002, null)" autocomplete="off" id="contentsTitleInput_1002" name="sub_category" onkeypress="return event.keyCode != 13;">
+                                                    <input type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1002, null)" autocomplete="off" id="contentsTitleInput_1002" name="sub_category" onkeypress="return event.keyCode != 13;">
                                                     <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1002" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
                                                         <% data.forEach(objects=>{ %>
                                                             <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
@@ -1062,6 +1054,31 @@
                                                             <% });%>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label class="" style="">Category</label>
+                                                <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
+                                                    <input type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1003, null)" autocomplete="off" id="contentsTitleInput_1003" name="category" onkeypress="return event.keyCode != 13;">
+                                                    <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1003" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
+                                                        <% data.forEach(objects=>{ %>
+                                                            <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
+                                                                <%=objects.category%>
+                                                            </div>
+                                                            <% });%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label>Product Name</label>
+                                                <input type="text" class="form-control" placeholder="HP Elite Book" name="name" onkeypress="return event.keyCode != 13;">
                                             </div>
                                         </div>
 
@@ -1085,14 +1102,14 @@
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label>Buying Price</label>
-                                                <input type="number" class="form-control" placeholder="1" name="buying_price">
+                                                <input required type="number" class="form-control" placeholder="1" name="buying_price">
                                             </div>
                                         </div>
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label>Selling Price</label>
-                                                <input type="number" class="form-control" placeholder="1" name="selling_price" onkeypress="return event.keyCode != 13;">
+                                                <input required type="number" class="form-control" placeholder="1" name="selling_price" onkeypress="return event.keyCode != 13;">
                                             </div>
                                         </div>
 
@@ -1963,7 +1980,7 @@
                     textInput = document.getElementById(`contentsTitleInput_${findInput}`);
                 }
                 let text = tag.innerText;
-                console.log(text);
+                // console.log(text);
                 textInput.value = text;
 
                 let parent = tag.parentNode;
@@ -1977,6 +1994,7 @@
 
                 axios.post('/product/get_category', { tagInnerText })
                     .then(response => {
+                        console.log('hhh');
                         console.log(response.data);
                         if (response.data.success) {
                             upc.value = response.data.u_code;

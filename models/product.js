@@ -32,13 +32,18 @@ const productSchema = new mongoose.Schema({
         required: false,
         unique: false
     },
-    category_name: {
+    parent_category: {
         type: String,
         required: false,
         unique: false
     },
 
     sub_category: {
+        type: String,
+        required: false,
+        unique: false
+    },
+    category: {
         type: String,
         required: false,
         unique: false

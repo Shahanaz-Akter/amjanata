@@ -85,9 +85,10 @@
                                         <th>Primary_Img</th>
                                         <th>Category_Img</th>
                                         <th>Secondary_Img</th>
-                                        <th>Name</th>
                                         <th>Parent_Category</th>
                                         <th>Sub_Category</th>
+                                        <th>Category</th>
+                                        <th>Name</th>
                                         <th>Buying_Price</th>
                                         <th>Selling_Price</th>
                                         <th>Price</th>
@@ -117,29 +118,44 @@
                                                 <%=objects.upc_code%>
                                             </td>
                                             <td>
-                                                <div class="" style="background: url('<%=objects.primary_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;">
-                                                </div>
+
+                                                <%if(objects.primary_image){%>
+                                                    <div class="" style="background: url('<%=objects.primary_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;"></div>
+
+                                                    <%}else{%>
+                                                        <p>Null</p>
+                                                        <%}%>
+
                                             </td>
                                             <td>
-                                                <div class="" style="background: url('<%=objects.category_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;">
-                                                </div>
+                                                <%if(objects.category_image){%>
+                                                    <div class="" style="background: url('<%=objects.category_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 100px;width: auto;">
+                                                    </div>
+                                                    <%}else{%>
+                                                        <p>Null</p>
+                                                        <%}%>
                                             </td>
                                             <td>
                                                 <button class="btn btn-md btn-dark" data-bs-toggle="modal" data-bs-target="#secondary_image_<%=objects.id%>">
                                                     S.Image List
                                                 </button>
                                             </td>
+                                            <td>
+                                                <%= objects.parent_category? objects.parent_category : "null" %>
+                                            </td>
 
                                             <td>
-                                                <%=objects.name%>
+                                                <%=objects.sub_category?objects.sub_category:'null'%>
+                                            </td>
+                                            <td>
+                                                <%=objects.category?objects.category:'null'%>
+                                            </td>
+                                            <td>
+                                                <%=objects.name?objects.name:'null'%>
 
-                                            <td>
-                                                <%=objects.category_name%>
                                             </td>
                                             <td>
-                                                <%=objects.sub_category%>
-                                            </td>
-                                            <td>
+
                                                 <%=objects.buying_price%>
 
                                             <td>
@@ -147,11 +163,12 @@
                                             </td>
 
                                             <td>
-                                                <%=objects.price%>
+                                                <%= objects.price? objects.price : "null" %>
                                             </td>
 
+
                                             <td>
-                                                <%=objects.discount%>
+                                                <%= objects.discount? objects.discount : "null" %>
 
                                             </td>
                                             <td>
@@ -159,20 +176,22 @@
 
                                             </td>
                                             <td>
-                                                <%=objects.total_qty%>
+                                                <%= objects.total_qty? objects.total_qty : "null" %>
+
                                             </td>
                                             <td>
-                                                <%=objects.old_price%>
+                                                <%= objects.old_price? objects.old_price : "null" %>
+
                                             </td>
                                             <td>
                                                 <%=objects.product_code%>
                                             </td>
                                             <td>
-                                                <%=objects.product_type%>
+                                                <%= objects.product_type? objects.product_type : "null" %>
                                             </td>
 
                                             <td>
-                                                <%=objects.description%>
+                                                <%= objects.description? objects.description : "null" %>
                                             </td>
                                             <td>
                                                 <div class="btn-group mb-2">

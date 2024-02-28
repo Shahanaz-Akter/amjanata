@@ -2,12 +2,8 @@ const mongoose = require('mongoose');
 
 const categorySchema = new mongoose.Schema({
 
-    category_image: {
-        type: String,
-        required: false,
 
-    },
-    category_name: {
+    parent_category: {
         type: String,
         required: false
     },
@@ -15,9 +11,18 @@ const categorySchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    category: {
+        type: String,
+        required: false
+    },
     upc_code: {
         type: String,
         required: false,
+    },
+    category_image: {
+        type: String,
+        required: false,
+
     },
     createdAt: {
         type: Date,

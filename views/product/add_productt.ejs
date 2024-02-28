@@ -988,6 +988,7 @@
                                             <input type="text" class="form-control" value="<%=sku_code%>" readonly name="sku_code" onkeypress="return event.keyCode != 13;">
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-3 col-lg-3 col-xl-3 mb-2">
                                         <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                             <label>UPC Code</label>
@@ -1007,22 +1008,28 @@
                                     <div class="col-12 col-md-12 col-lg-12 col-xl-6 row ">
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
-                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
-                                                <label>Product Name</label>
-                                                <input type="text" class="form-control" placeholder="HP Elite Book" name="name" onkeypress="return event.keyCode != 13;">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:1px">
                                                 <label class="form-label" style="">Parent Category</label>
-                                                <input readonly type="text" class="form-control" value="<%=cate_name%>" name="category_name">
+                                                <input readonly type="text" class="form-control" value="<%=parent_cate%>" name="parent_category">
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:1px">
                                                 <label class="form-label" style="">Sub Category</label>
-                                                <input readonly type="text" class="form-control" value="<%=sub_cate_name%>" name="sub_category">
+                                                <input readonly type="text" class="form-control" value="<%=sub_cate%>" name="sub_category">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:1px">
+                                                <label class="form-label" style="">Category</label>
+                                                <input readonly type="text" class="form-control" value="<%=cate%>" name="category">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label>Product Name</label>
+                                                <input type="text" class="form-control" placeholder="HP Elite Book" name="name" onkeypress="return event.keyCode != 13;">
                                             </div>
                                         </div>
 
@@ -1044,14 +1051,14 @@
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label>Buying Price</label>
-                                                <input type="number" class="form-control" placeholder="1" name="buying_price">
+                                                <input required type="number" class="form-control" placeholder="1" name="buying_price">
                                             </div>
                                         </div>
 
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label>Selling Price</label>
-                                                <input type="number" class="form-control" placeholder="1" name="selling_price" onkeypress="return event.keyCode != 13;">
+                                                <input required type="number" class="form-control" placeholder="1" name="selling_price" onkeypress="return event.keyCode != 13;">
                                             </div>
                                         </div>
 
@@ -1882,8 +1889,6 @@
                 oldDropdownContent = dropdownMenu_s
             };
 
-
-
             document.addEventListener("click", function (event) {
                 var target = event.target
                 let dropdownBox = document.querySelectorAll(".dropdownBox");
@@ -2178,9 +2183,6 @@
             // Set the min attribute of the date input
             document.getElementById("date").min = currentDate;
         </script>
-
-
-
 
 </body>
 

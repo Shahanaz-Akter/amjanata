@@ -116,7 +116,7 @@
                                                                 style="width:130px;border-radius:5px;" id="main-img-preview1">
                                                             <br>
                                                             <label for="mainImg1" class="btn btn-dark mt-2">Category Image</label>
-                                                            <input type="file" class="d-none" id="mainImg1" onchange="main_image_changed1(this,null)" name="category_image">
+                                                            <input type="file" class="d-none" id="mainImg1" onchange="main_image_changed1(this,Null)" name="category_image">
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-md-6 col-lg-6 col-xl-6 mb-2">
@@ -293,7 +293,7 @@
                                                             <div id='custom-select-status' class='hidden-visually' aria-live="polite"></div>
                                                             <div class="custom-select" id="myCustomSelect">
                                                                 <!-- <input type="text" id="custom-select-input" class="select-css" name="category_name" value=""> -->
-                                                                <input type="text" id="custom-select-input" class="select-css" name="category_name" value="" aria-autocomplete="both" aria-controls="custom-select-list" value="">
+                                                                <input type="text" id="custom-select-input" class="select-css" name="parent_category" value="" aria-autocomplete="both" aria-controls="custom-select-list" value="">
 
                                                                 <span class="custom-select-icons">
                                                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" focusable="false" aria-hidden="true" id="icon-circle-down" class="icon" role="img">
@@ -309,7 +309,7 @@
                                                                 <ul class="custom-select-options hidden-all" id="custom-select-list">
                                                                     <% record.forEach(all=> { %>
                                                                         <li><strong>
-                                                                                <%= all.category_name %>
+                                                                                <%= all.parent_category %>
                                                                             </strong></li>
                                                                         <% }); %>
                                                                 </ul>
@@ -614,6 +614,13 @@
                                                         </div>
                                                     </div>
 
+                                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 mb-2 wrapper1">
+                                                        <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                                            <label>Category</label>
+                                                            <input type="text" class="form-control" value="" name="category" onkeypress="return event.keyCode != 13;">
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <style>
@@ -712,6 +719,7 @@
                                                 <th>Category Image</th>
                                                 <th>Parent Category</th>
                                                 <th>Sub Category</th>
+                                                <th>Category</th>
                                                 <th>UPC Code</th>
                                                 <th>Actions</th>
                                             </tr>
@@ -726,17 +734,28 @@
                                                         <%=records.id%>
                                                     </td> -->
                                                     <td>
-                                                        <div class="" style="background: url('<%=records.category_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 150px;width:150px;">
-                                                        </div>
+
+                                                        <%if(records.category_image){%>
+                                                            <div class="" style="background: url('<%=records.category_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 150px;width:150px;">
+                                                            </div>
+                                                            <%}else{%>
+                                                                <div>Null</div>
+                                                                <%}%>
+
                                                     </td>
 
                                                     <td>
-                                                        <%=records.category_name%>
+                                                        <%=records.parent_category?records.parent_category: 'Null' %>
                                                     </td>
 
                                                     <td>
-                                                        <%=records.sub_category%>
+                                                        <%=records.sub_category?records.sub_category: 'Null' %>
                                                     </td>
+                                                    <td>
+                                                        <%=records.category?records.category: 'Null' %>
+
+                                                    </td>
+
                                                     <td>
                                                         <%=records.upc_code%>
                                                     </td>

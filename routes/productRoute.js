@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 // const multer = require('multer');
-const { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory, cms } = require('../controllers/productController');
+const { productList, category, postAddProduct, addProduct, manualAddProduct, postCategory, getCategory } = require('../controllers/productController');
 
 const upload = require('../multer');
 
