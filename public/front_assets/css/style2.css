@@ -1530,6 +1530,10 @@ button {
     .f-2 {
         padding-right: 135px !important;
     }
+    .text_latest{
+        font-size: 35px;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 768px) {
