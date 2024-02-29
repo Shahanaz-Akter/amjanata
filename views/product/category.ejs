@@ -116,9 +116,10 @@
                                                                 style="width:130px;border-radius:5px;" id="main-img-preview1">
                                                             <br>
                                                             <label for="mainImg1" class="btn btn-dark mt-2">Category Image</label>
-                                                            <input type="file" class="d-none" id="mainImg1" onchange="main_image_changed1(this,Null)" name="category_image">
+                                                            <input type="file" class="d-none" id="mainImg1" onchange="main_image_changed1(this,null)" name="category_image">
                                                         </div>
                                                     </div>
+
                                                     <div class="col-12 col-md-6 col-lg-6 col-xl-6 mb-2">
                                                         <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                                             <label>UPC code</label>
@@ -132,6 +133,8 @@
                                                         //image category
                                                         const main_image_changed1 = (tag, ind) => {
                                                             let imgTag;
+                                                            console.log(imgTag, ind);
+
                                                             if (ind) {
                                                                 imgTag = document.getElementById(`main-img-preview1_${ind}`);
                                                             } else {
@@ -307,9 +310,9 @@
                                                                 </span>
 
                                                                 <ul class="custom-select-options hidden-all" id="custom-select-list">
-                                                                    <% record.forEach(all=> { %>
+                                                                    <% records.forEach(all=> { %>
                                                                         <li><strong>
-                                                                                <%= all.parent_category %>
+                                                                                <%= all.parent_category.parent_category %>
                                                                             </strong></li>
                                                                         <% }); %>
                                                                 </ul>
@@ -727,7 +730,7 @@
 
                                         <tbody>
 
-                                            <%record.forEach(records=>{%>
+                                            <%records.forEach(records=>{%>
                                                 <tr>
                                                     <td><input type="checkbox" class="row-checkbox"></td>
                                                     <!-- <td>
@@ -735,8 +738,8 @@
                                                     </td> -->
                                                     <td>
 
-                                                        <%if(records.category_image){%>
-                                                            <div class="" style="background: url('<%=records.category_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 150px;width:150px;">
+                                                        <%if(records.parent_category.category_image){%>
+                                                            <div class="" style="background: url('<%=records.parent_category.category_image%>');background-size:cover;background-repeat: no-repeat;background-position:center center; height: 150px;width:150px;">
                                                             </div>
                                                             <%}else{%>
                                                                 <div>Null</div>
@@ -745,19 +748,21 @@
                                                     </td>
 
                                                     <td>
-                                                        <%=records.parent_category?records.parent_category: 'Null' %>
+                                                        <%=records.parent_category.parent_category?records.parent_category.parent_category: 'Null' %>
                                                     </td>
 
+                                                    <!-- records record1 record2 -->
+
                                                     <td>
-                                                        <%=records.sub_category?records.sub_category: 'Null' %>
+                                                        <%=records.sub_category.sub_category?records.sub_category.sub_category: 'Null' %>
                                                     </td>
+
                                                     <td>
                                                         <%=records.category?records.category: 'Null' %>
-
                                                     </td>
 
                                                     <td>
-                                                        <%=records.upc_code%>
+                                                        <%=records.parent_category.upc_code%>
                                                     </td>
                                                     <td>
                                                         <div class="btn-group mb-2">
@@ -766,7 +771,7 @@
                                                             </button>
                                                             <div class="dropdown-menu">
 
-                                                                <a class="dropdown-item" href="/product/add_product/<%=records.id%>">
+                                                                <a class="dropdown-item" href="/product/add_product/<%=records._id%>">
 
                                                                     <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
                                                                         <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />

@@ -1,7 +1,11 @@
 const asyncHandler = require('express-async-handler');
 const bodyParser = require('body-parser');
+const parentCategory = require('../models/parentcategory');
+const subCategory = require('../models/subcategory');
 const Category = require('../models/category');
 const Product = require('../models/product');
+const { ObjectId } = require('mongodb');
+
 
 // const addProduct = async (req, res) => {
 //     let error1 = req.query.error1;
@@ -24,10 +28,44 @@ const productList = async (req, res) => {
 
 const category = async (req, res) => {
     let upc_code = '1201';
-    let record = await Category.find({}); //all records
+    let record = await parentCategory.find({}); //all records
+
+    let records = await Category.aggregate([
+        {
+            $addFields: {
+                parent_category_id: { $toObjectId: "$parent_category_id" },
+                sub_category_id: { $toObjectId: "$sub_category_id" }
+            }
+        },
+        {
+            $lookup: {
+                from: "parentcategories",
+                localField: "parent_category_id",
+                foreignField: "_id",
+                as: "parent_category"
+            }
+        },
+        {
+            $unwind: "$parent_category"
+        },
+        {
+            $lookup: {
+                from: "subcategories",
+                localField: "sub_category_id",
+                foreignField: "_id",
+                as: "sub_category"
+            }
+        },
+        {
+            $unwind: "$sub_category"
+        }
+    ]);
+
+    // console.log(records);
+
 
     if (record.length > 0) {
-        const latestCategory = await Category.findOne({}).sort({ createdAt: -1 });
+        const latestCategory = await parentCategory.findOne({}).sort({ createdAt: -1 });
         let latest_upc_code = parseInt(latestCategory.upc_code);
 
         // latest_upc_code = isNaN(latest_upc_code) ? 0 : latest_upc_code;
@@ -37,7 +75,6 @@ const category = async (req, res) => {
         upc_code = latest_upc_code.toString().padStart(4, '0');
         // console.log('Updated UPC: ', upc_code);
     }
-
     // Generate the timestamp
     let timestamp = Date.now().toString();
 
@@ -47,19 +84,40 @@ const category = async (req, res) => {
     // latestCategory.upc_code = parseInt(upc_code) + 1;
     // console.log(latestCategory.upc_code);
 
-    res.render('product/category.ejs', { upc_code, sku_code, record });
+    // let record1 = await subCategory.find({});
+    // let record2 = await Category.find({});
+
+    // let filteredSubRecords = record2.filter(cate => record.some(parent => parent._id.equals(cate.parent_category_id)));
+    // console.log(filteredSubRecords);
+
+
+
+    res.render('product/category.ejs', { upc_code, sku_code, records });
 }
 
 const postCategory = async (req, res) => {
     let { parent_category, sub_category, category, upc_code } = req.body;
+
     try {
-        let newCategory = await Category.create({
+        let parent = await parentCategory.create({
             category_image: req.files['category_image'] ? '/front_assets/new_images/' + req.files['category_image'][0].filename : null,
             parent_category: parent_category,
-            sub_category: sub_category,
-            category: category,
             upc_code: upc_code,
         });
+
+        // console.log(parentCategory._id);
+
+        let category1 = await subCategory.create({
+            parent_category_id: parent._id,
+            sub_category: sub_category,
+        });
+
+        let category2 = await Category.create({
+            parent_category_id: parent._id,
+            sub_category_id: category1._id,
+            category: category,
+        });
+
         res.redirect('/product/category');
     }
     catch (err) {
@@ -70,15 +128,53 @@ const postCategory = async (req, res) => {
 
 const addProduct = async (req, res) => {
     // console.log('ssss');
-    id = req.params.id;
+    id = new ObjectId(req.params.id);
     // console.log(id);
-    let data = await Category.findById(id);
+    // let data = await Category.findById(id);
     // console.log(data);
 
-    let parent_cate = data.parent_category;
-    let sub_cate = data.sub_category;
-    let cate = data.category;
-    let upc_code = data.upc_code;
+    let data = await Category.aggregate([
+        {
+            $match: {
+                _id: id // Assuming 'id' is the ID you're filtering on
+            }
+        },
+        {
+            $addFields: {
+                parent_category_id: { $toObjectId: "$parent_category_id" },
+                sub_category_id: { $toObjectId: "$sub_category_id" }
+            }
+        },
+        {
+            $lookup: {
+                from: "parentcategories",
+                localField: "parent_category_id",
+                foreignField: "_id",
+                as: "parent"
+            }
+        },
+        {
+            $unwind: "$parent"
+        },
+        {
+            $lookup: {
+                from: "subcategories",
+                localField: "sub_category_id",
+                foreignField: "_id",
+                as: "sub"
+            }
+        },
+        {
+            $unwind: "$sub"
+        }
+    ]);
+
+    console.log('Data', data);
+    let parent_cate = data[0].parent.parent_category;
+    let sub_cate = data[0].sub.sub_category;
+    let cate = data[0].category;
+
+    let upc_code = data[0].parent.upc_code;
     let timestamp = Date.now().toString(); // Get the current timestamp as a string
     let sku_code = upc_code + timestamp;
     res.render('product/add_productt.ejs', { sku_code, upc_code, parent_cate, sub_cate, cate });

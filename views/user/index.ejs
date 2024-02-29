@@ -10,11 +10,8 @@
 
   <!-- CSS files -->
   <link href="../../front_assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Plugins -->
@@ -37,8 +34,6 @@
       }
 
     } */
-
-   
   </style>
 </head>
 
@@ -54,20 +49,17 @@
   <!--end loader-->
 
   <div class="text-center" style="background-color: #8aff5f;">
-    <p>Amjonota</p>
+    <p>Amjanata</p>
   </div>
 
   <!--start top header-->
   <header class="mb-2 py-5 mx-sm-auto top-header">
     <nav class="navbar navbar-expand-md w-100 navbar-dark container-lg ">
-      <a class="navbar-brand d-none d-xl-inline" href="/"><img src="../../front_assets/img/logo.png" class="logo-img"
-          alt=""></a>
-      <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar">
+      <a class="navbar-brand d-none d-xl-inline" href="/"><img src="../../front_assets/img/logo.png" class="logo-img" alt=""></a>
+      <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
         <i class="bi bi-list"></i>
       </a>
-      <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar">
+      <a class="mobile-menu-btn d-inline d-xl-none" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
         <img src="../../front_assets/img/logo.png" class="logo-img" alt="">
       </a>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
@@ -79,17 +71,16 @@
 
             <div class="nav-item dropdown">
               <a class="nav-link categories dropdown-toggle dropdown-toggle-nocaret m-2 px-3 py-0 px-5" style="
-              height: 40px; border-radius:5px; font-size:small;font-weight: 600;" href="javascript:;"
-                data-bs-toggle="dropdown">
+              height: 40px; border-radius:5px; font-size:small;font-weight: 600;" href="javascript:;" data-bs-toggle="dropdown">
                 Categories
                 <i class="bi bi-caret-down-fill"></i>
               </a>
               <ul class="dropdown-menu">
                 <% category.forEach(cate=>{%>
                   <li>
-                    <a class="dropdown-item" href="/category">
+                    <span class="dropdown-item">
                       <%=cate.parent_category%>
-                    </a>
+                    </span>
                   </li>
                   <%});%>
 
@@ -106,11 +97,9 @@
             </div>
 
             <div class="d-lg-block d-lg-flex d-md-flex d-none d-sm-none mt-2 position-relative search-box w-md-auto">
-              <div class="position-absolute position-absolute start-0 translate-middle ms-4 fs-5" style="top: 21px;"><i
-                  class="bi bi-search" style="font-size:medium;"></i></div>
+              <div class="position-absolute position-absolute start-0 translate-middle ms-4 fs-5" style="top: 21px;"><i class="bi bi-search" style="font-size:medium;"></i></div>
               <input class="form-control form-control-lg ps-5 rounded-3 categories" style="width: 500px;
-              height: 40px; border-radius:5px; font-size:medium; border-width: 0;;" type="text"
-                placeholder="Search for Products, Brand and More">
+              height: 40px; border-radius:5px; font-size:medium; border-width: 0;;" type="text" placeholder="Search for Products, Brand and More">
             </div>
 
 
@@ -139,30 +128,25 @@
       <ul class="navbar-nav secondary-menu flex-row">
 
         <li class="nav-item d-lg-flex d-lg-flex d-md-none d-none d-sm-none nic-1030">
-          <a class="nav-link" style="font-size:15px;font-weight: 500;" href="register.html"><i
-              class="bi bi-person-circle me-2"></i>Login <i class="bi bi-caret-down-fill"></i></a>
+          <a class="nav-link" style="font-size:15px;font-weight: 500;" href="register.html"><i class="bi bi-person-circle me-2"></i>Login <i class="bi bi-caret-down-fill"></i></a>
         </li>
         <li class="nav-item d-md-block d-md-flex d-sm-block d-sm-flex d-xl-none d-lg-none ic-1030">
-          <a class="nav-link" style="font-size:25px;font-weight: 500;" href="account-dashboard.html"><i
-              class="bi bi-person-circle me-2"></i></a>
+          <a class="nav-link" style="font-size:25px;font-weight: 500;" href="account-dashboard.html"><i class="bi bi-person-circle me-2"></i></a>
         </li>
-        <li class="nav-item d-lg-flex d-lg-flex d-md-none d-none d-sm-none nic-1030" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight">
+        <li class="nav-item d-lg-flex d-lg-flex d-md-none d-none d-sm-none nic-1030" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <a class="nav-link position-relative" style="font-size:15px;font-weight: 500;" href="javascript:;">
             <!-- <div class="cart-badge">8</div> -->
             <i class="bi bi-basket2 me-2"></i>
             Cart
           </a>
         </li>
-        <li class="nav-item d-md-block d-md-flex d-sm-block d-sm-flex d-xl-none d-lg-none ic-1030"
-          data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+        <li class="nav-item d-md-block d-md-flex d-sm-block d-sm-flex d-xl-none d-lg-none ic-1030" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <a class="nav-link position-relative" style="font-size:25px;font-weight: 500;" href="javascript:;">
             <i class="bi bi-basket2 me-2"></i>
           </a>
         </li>
         <li class="nav-item d-lg-block d-lg-flex d-md-none d-none d-sm-none nic-1030">
-          <a class="nav-link" style="font-size:15px;font-weight: 500;" href="account-dashboard.html"><i
-              class="bi bi-shop-window me-2"></i>Become a Seller</a>
+          <a class="nav-link" style="font-size:15px;font-weight: 500;" href="account-dashboard.html"><i class="bi bi-shop-window me-2"></i>Become a Seller</a>
         </li>
         <!-- <li class="nav-item d-md-block d-md-flex d-sm-block d-sm-flex d-xl-none d-lg-none ic-1030">
           <a class="nav-link" style="font-size:25px;font-weight: 500;" href="account-dashboard.html"><i
@@ -170,19 +154,23 @@
         </li> -->
 
       </ul>
-      <li class="d-lg-none d-md-none d-md-flex d-sm-block d-sm-flex d-xl-none mb-4 mx-auto search "
-        style="list-style: none;">
+      <li class="d-lg-none d-md-none d-md-flex d-sm-block d-sm-flex d-xl-none mb-4 mx-auto search " style="list-style: none;">
 
         <div class="d-flex align-items-center justify-content-between">
           <div class="dropdown mx-1 nav-item">
-            <a class="categories dropdown-toggle dropdown-toggle-nocaret nav-link p-2 px-1"
-              style="border-radius:5px; font-size:small;font-weight: 600;" href="javascript:;"
-              data-bs-toggle="dropdown">
+            <a class="categories dropdown-toggle dropdown-toggle-nocaret nav-link p-2 px-1" style="border-radius:5px; font-size:small;font-weight: 600;" href="javascript:;" data-bs-toggle="dropdown">
               Categories
               <i class="bi bi-caret-down-fill"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/category">Grocery</a></li>
+              <% category.forEach(cate=>{%>
+                <li>
+                  <span class="dropdown-item">
+                    <%=cate.parent_category%>
+                  </span>
+                </li>
+                <%});%>
+                  <!-- <li><a class="dropdown-item" href="/category">Grocery</a></li>
               <li><a class="dropdown-item" href="/category">Mobiles</a></li>
               <li><a class="dropdown-item" href="/category">Fashion</a></li>
               <li><a class="dropdown-item" href="/category">Electronics</a></li>
@@ -190,15 +178,16 @@
               <li><a class="dropdown-item" href="/category">Health</a></li>
               <li><a class="dropdown-item" href="/category">Video Games</a></li>
               <li><a class="dropdown-item" href="/category">Beauty,Toy and More</a></li>
-              <li><a class="dropdown-item" href="/category">Gift Cards</a></li>
+              <li><a class="dropdown-item" href="/category">Gift Cards</a></li> -->
             </ul>
           </div>
 
-          <form class="categories rounded-3" style="width: 255px;border-radius: 15px;">
+          <form class="categories rounded-3" action="/post_search" method="post" style="width: 255px;border-radius: 15px;">
             <button class="rounded-3 categories" type="submit"><i class="fa fa-search text-secondary"></i></button>
-            <input class="rounded-3 categories fs-6" style="width:200px;outline: none; border-radius: 15px;" type="text"
-              placeholder="Search for Products, Brand ...." name="search">
+            <input class="rounded-3 categories fs-6" style="width:200px;outline: none; border-radius: 15px;" type="text" placeholder="Search for Products, Brand ...." name="search">
+            <button type="submit">submit</button>
           </form>
+
         </div>
       </li>
 
@@ -217,1749 +206,84 @@
 
   <!-- top navbar start-->
   <section class="topProductNavbar mx-4 d-lg-block d-lg-flex d-md-none d-none d-sm-none ">
-    <!-- Grocery -->
-    <div class="topProductNavbar_Nav">
-      <a href="/category">
-        <img src="../../front_assets/img/Category/Category 1.png" />
-        <p class="Nav_Text" style="padding-top: 5px;">Grocery</p>
-      </a>
-    </div>
-    <!-- Mobiles -->
-    <div class="topProductNavbar_Nav">
-      <a href="/category">
-        <img src="../../front_assets/img/Category/Category 2.png" />
-        <p class="Nav_Text" style="padding-top: 5px;">Mobiles</p>
-      </a>
+    <!-- single category  -->
+    <%category.forEach(items=>{%>
 
-    </div>
-    <!-- Fashion  -->
-    <div class="topProductNavbar_Nav">
-      <a href="category">
-        <img src="../../front_assets/img/Category/Category 3.png" />
-        <br />
-        <a href="" class="Navlink angledownIcon">
-          Fashion
-          <i class="fa-solid fa-angle-down submenuicon"> </i>
+      <%if(!items.sub_category||!items.category){%>
 
-          <div class="MoreOptionDisplay_Container">
-            <div class="MoreOption_Content">
-              <!-- Men's Top Wear -->
+        <div class="topProductNavbar_Nav">
+          <a href="/">
+            <img src="../../front_assets/img/Category/Category 1.png" />
+            <p class="Nav_Text" style="padding-top: 5px;">
+              <%=items.parent_category%>
+            </p>
+          </a>
+        </div>
 
-              <div class="MoreOption">
-                <p>Men's Top Wear</p>
-                <i class="fa-solid fa-angle-right"></i>
+        <%}else{%>
+          <!-- multi category  -->
+          <div class="topProductNavbar_Nav">
+            <a href="">
+              <img src="../../front_assets/img/Category/Category 3.png" />
+              <br />
+              <a href="" class="Navlink angledownIcon">
+                <%=items.parent_category%>
+                  <i class="fa-solid fa-angle-down submenuicon"> </i>
 
-                <div class="MoreSubOptionDisplay_Container">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's T-Shirt</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Casual Shirts</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Formal Shirts</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Kurtas</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Blazers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Ethnic Sets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Suit</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Fabrics</p>
+                  <div class="MoreOptionDisplay_Container">
+                    <div class="MoreOption_Content">
+
+                      <!-- Men's Top Wear -->
+                      <div class="MoreOption">
+
+                        <p>Men's Top Wear</p>
+                        <i class="fa-solid fa-angle-right"></i>
+
+                        <div class="MoreSubOptionDisplay_Container">
+                          <div class="MoreSubOption_Content">
+                            <div class="MoreSubOption">
+                              <p>All</p>
+                            </div>
+                            <div class="MoreSubOption">
+                              <p>Men's T-Shirt</p>
+                            </div>
+                            <div class="MoreSubOption">
+                              <p>Men's Shirt</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Women Ethnic -->
+                      <div class="MoreOption">
+                        <p>Women Ethnic</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <div class="Womens-Ethinc">
+                          <div class="MoreSubOption_Content">
+                            <div class="MoreSubOption">
+                              <p>All</p>
+                            </div>
+                            <div class="MoreSubOption">
+                              <p>Women Sarees & Blouse</p>
+                            </div>
+                            <div class="MoreSubOption">
+                              <p>Women Kurtas & Kurtis</p>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <!-- Men's Bottom Wear -->
-
-              <div class="MoreOption">
-                <p>Men's Bottom Wear</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Mens-Bottom-wear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Jeans</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Trousers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Trackpants</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Shorts</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Pyjamas</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Loungepants</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Ethnic Pyjama</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Threeforths</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Dhoti</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Men's Footwear -->
-
-              <div class="MoreOption">
-                <p>Men's Foot Wear</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Mens-Footwear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Sports Shoes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Casual Shoes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Formal Shoes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Sandals & Floaters</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Slippers & Flip Flops</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Ethnic Shoes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Active Footwear</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Combo Footwear</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Women Ethnic -->
-
-              <div class="MoreOption">
-                <p>Women Ethnic</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Womens-Ethinc">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Sarees & Blouse</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Kurtas & Kurtis</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Dress Material</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Gowns</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Lehenga Cholis</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Leggings & Patialas</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women alazzos & Shararas</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Dupatta</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Women Western -->
-
-              <div class="MoreOption">
-                <p>Women Western</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Women-Western">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Tops</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Jeans</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women T-shirts & Polo T-shirts</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Nighties & Night Dresses</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Trousers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Trackpants</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Jumpsuits</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Sports Bra</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Women Footwear -->
-
-              <div class="MoreOption">
-                <p>Women Footwear</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Women-Footwear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Flats</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Heels</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Wedges</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Slipper & Flip Flops</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Casual Shoes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Sport Shoes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Sneakers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Ethnic Shoes</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Watch and Accessories -->
-
-              <div class="MoreOption">
-                <p>Watch and Accessories</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="W-and-A">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>Men & Women Wallets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men & Women Watches</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men & Women Sunglasses</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men & Women Belts</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Fashion Jewellery</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Precious Coins & Bars</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Frames & Contact Lenses</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Kid Accessories</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Precious Articles</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Kids -->
-
-              <div class="MoreOption">
-                <p>Kids</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Kids">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys & Girls Dresses</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys & Girls Combosets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys & Girls Ethnic Wear</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys & Girls Jeans</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys & Girls Shorts</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys & Girls Trackpants</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys & Girls Innerwear</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Kids Slipper Flip Flops</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Kids Sports Shoes</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Essentials -->
-
-              <div class="MoreOption">
-                <p>Essentials</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Essentials">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>Women Kurta sets & Salwar Suits</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Bra & Panty</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Brief & Trunks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Vests</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Boxer</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Boys Innerwear</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Girls Innerwear</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Lingerie Sets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women Slipper Flip Flops</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+              </a>
+            </a>
           </div>
-        </a>
-      </a>
-    </div>
-    <!-- Electronics -->
-    <div class="topProductNavbar_Nav">
-      <a href="electronic.html">
-        <img src="../../front_assets/img/Category/Category 4.png" />
 
-        <br />
-        <a href="#" class="Navlink angledownIcon">
-          Electronics
-          <i class="fa-solid fa-angle-down submenuicon"> </i>
+          <%}%>
 
-          <div class="MoreOptionDisplay_Container">
-            <div class="MoreOption_Content">
-              <!-- Audio -->
+            <%});%>
 
-              <div class="MoreOption">
-                <p>Audio</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="MoreSubOptionDisplay_Container">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bluetooth Headphones</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Wired Headphones</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Soundbars</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bluetooth Speakers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Home Theaters</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Remote Control</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Headphones Pouch & Case Cover</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>TV Streaming Device</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cameras and Accessories -->
-
-              <div class="MoreOption">
-                <p>Cameras and Accessories</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Mens-Bottom-wear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>DSLR & Mirrorless</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sports & Action</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Point & Shoot</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Instant Cameras</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Camcorders</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Camera Lenses</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Camera Tripods</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Flashes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gimbals</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Binoculars</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Smart Home Automation-->
-
-              <div class="MoreOption">
-                <p>Smart Home Automation</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Mens-Footwear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Assistants</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Lights</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Cameras</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Switches</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Door Locks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sensors & Alarms</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Smart Wearables -->
-
-              <div class="MoreOption">
-                <p>Smart Wearables</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Womens-Ethinc">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Watches</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Hand Bands</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Smart Glasses</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PowerBank and Storage -->
-
-              <div class="MoreOption">
-                <p>PowerBank and Storage</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Women-Western">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>All type PowerBank</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Memory Card</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Computer Storage</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Laptop Storage</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mobile Storage</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Internal Hard Drive</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>External Hard Drive</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Mobile Accessories -->
-
-              <div class="MoreOption">
-                <p>Mobile Accessories</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Women-Footwear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Plain & Designer Cases</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Screen Guards</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Camera Lens Protectors</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mobile Holder</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mobile Cable</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Moble Pouches</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Tablet Accessories</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Charging Adapter</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mobile Other Accessories</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Laptop and Desktop -->
-
-              <div class="MoreOption">
-                <p>Laptop and Desktop</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="W-and-A">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Laptops</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gamnig Laptops</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Desktop PCs</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>All in One PCs</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mini PCs</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Tower PCs</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>PC Finder</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>GST Invoice on Laptops</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Laptop Accessories -->
-
-              <div class="MoreOption">
-                <p>Laptop Accessories</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Kids">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mouse</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Laptop Keyboards</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Router</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Data Cards</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>UPS & USB Gadgets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Laptop Battery</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Laptop Adapter</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Prosecors</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Laptop Accessories</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Comuter Peripherals -->
-
-              <div class="MoreOption">
-                <p>Computer Peripherals</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Essentials">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Printers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Monitors</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Projectors</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Toners</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Ink Bottles & Ink Cartridges</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Receipt Printers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Lamination Machines</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Barcode Scanners</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Currency Detectors</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Gaming -->
-
-              <div class="MoreOption">
-                <p>Gaming</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Smart-Wearable">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gaming Consoles</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gaming Mouse Mousepads</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gaming Keyboards</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gamepads & Controllers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Game Collection</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gaming Accessories Combo</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Membership Cards</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gaming Components</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gaming Accessories</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </a>
-    </div>
-    <!-- Home & Furniture  -->
-    <div class="topProductNavbar_Nav">
-      <a href="h&f.html">
-        <img src="../../front_assets/img/Category/Category 5.png" />
-
-        <br />
-        <a href="#" class="Navlink angledownIcon">
-          Home & Furniture
-          <i class="fa-solid fa-angle-down submenuicon"> </i>
-
-          <div class="MoreOptionDisplay_Container">
-            <div class="MoreOption_Content">
-              <!-- Home & Furniture -->
-
-              <div class="MoreOption">
-                <p>Home & Furniture</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="MoreSubOptionDisplay_Container">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bed Linens</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bedsheets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Blankets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Curtains & Accessories</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bath linen</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Floor Coverings</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Covers & Protectors</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cushions & Pillows</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Table Linen Sets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Kitchen Linen Sets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sofa & Curtain Fabrics</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Living Room Furniture -->
-
-              <div class="MoreOption">
-                <p>Living Room Furniture</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Mens-Bottom-wear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sofas Sets & Sectionals</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>TV Units</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Dining Sets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Coffee Tables</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sofa Beds</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Recliners</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cabinet & Drawers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bookshelves</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Shoe Racks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Office Tables & Chairs</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Kitchen & Dining -->
-
-              <div class="MoreOption">
-                <p>Kitchen & Dining</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Mens-Footwear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cookware</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Kitchen Tools</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Lunchboxes,Bottles & Flasks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gas Stoves & Accessories</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Tableware & Dinnerware</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Knives,Choppers & Cutters</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Barwear & Bakewear</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Disposable Supplies</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Bedroom Furniture -->
-
-              <div class="MoreOption">
-                <p>Bedroom Furniture</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Womens-Ethinc">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mattresses</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Beds</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Wardrobes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Side Tables</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Book Shelves</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>TV Units</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Rocking Chairs</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Benches</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Home Decor -->
-
-              <div class="MoreOption">
-                <p>Home Decor</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Women-Western">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Lightings</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Wallpapers & Stickers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Paintings & Poster</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Clocks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Showpieces & Decoratives</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Flowers & Vases</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Photo Frames & Albums</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Festive & Gifting</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tools & Utility -->
-
-              <div class="MoreOption">
-                <p>Tools & Utility</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Women-Footwear">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Hand Tools</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Power Tools</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Measuring Tools</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Home Storage & Organizers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Appliance Trolly & Stands</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Laundary Organization</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Home Safety</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Paint Supplies & Equipments</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Lightings & Electricals -->
-
-              <div class="MoreOption">
-                <p>Lightings & Electricals</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="W-and-A">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bulbs</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Torches</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Tubelights</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Batteries</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Electrical Wire & Socket</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Electrical Hardware</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Outdoor Lamps</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Extension Cords</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Space Saving Frniture -->
-
-              <div class="MoreOption">
-                <p>Space Saving Frniture</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Kids">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Portable Laptop Tables</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Collapsible Wardrobes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bean Bags & Covers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Inflatable Sofas</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Hammock Swings</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>TV Mounts</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Kitchen Trolly</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Kitchen Cabinets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Shoe Racks</p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cleaning & Bath -->
-
-              <div class="MoreOption">
-                <p>Cleaning & Bath</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Essentials">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Mops</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cleaning Supplies</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>House Hold Supplies</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Air Fresheners</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cleaning Gloves</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Liquid Detergents</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Taps & Faucet</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>ToothBrush Holder</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bathroom Rack</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bathroom Shelves</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </a>
-    </div>
-    <!-- Health  -->
-    <div class="topProductNavbar_Nav">
-      <a href="health.html">
-        <img src="../../front_assets/img/Category/Category 6.png" />
-        <p class="Nav_Text" style="padding-top: 5px;">Health</p>
-      </a>
-    </div>
-    <!-- Games  -->
-    <div class="topProductNavbar_Nav">
-      <a href="video-game.html">
-        <img src="../../front_assets/img/Category/Category 7.png" />
-        <p class="Nav_Text" style="padding-top: 5px;">Video Games</p>
-      </a>
-    </div>
-    <!-- Beauty & toys  -->
-    <div class="topProductNavbar_Nav">
-      <a href="b&t.html">
-        <img src="../../front_assets/img/Category/Category 8.png" />
-
-        <br />
-        <a href="#" class="Navlink angledownIcon">
-          Beauty & Toys
-          <i class="fa-solid fa-angle-down submenuicon"> </i>
-
-          <div class="MoreOptionDisplay_Container">
-            <div class="MoreOption_Content">
-              <!-- Beauty & Personal Care -->
-
-              <div class="MoreOption">
-                <p>Beauty & Personal Care</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Beauty">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bath & Oral Care</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Personal Hygiene</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Eye Makeup</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Face Makeup</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Lip Makeup</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Hair Care</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bath Essentials</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women's Personal Hygiene</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Body & Skin Care</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Luxury</p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!-- Men's Grooming -->
-
-              <div class="MoreOption">
-                <p>Men's Grooming</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Grooming">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Face Washes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Beard Oils</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Hair Styling</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Shaving Essentials</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Aftershave</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Face Creams & Face Packs</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Soap & Bodywashes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Men's Grooming Combos</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sexual Wellness</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Office Tables & Chairs</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Food & Drinks -->
-
-              <div class="MoreOption">
-                <p>Food & Drinks</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Food">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Beverages</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Nuts & Dry Fruits</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cooking Essentials</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Breakfast Items</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Snacks Corner</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Chocolates</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baking Essentials</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sweets Store</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Ready to Cooks & Eat</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Jams,Spreads & Honey</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Nutrition & Health Care -->
-
-              <div class="MoreOption">
-                <p>Nutrition & Health Care</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Nutrition">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Masks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Ayurvedic Supplements</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Health Drinks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Vitamin Supplements</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Protin Supplements</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Women's Safety</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Home Medicines</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Home Medical Supplies</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Healthcare Comos</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Professional Medical Supplies</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Baby Care -->
-
-              <div class="MoreOption">
-                <p>Baby Care</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Baby">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Diapers & Wipes</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Bath & Grooming</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Gift Sets Combo</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Medical & Health Care</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Nursing & Breast Feeding</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Feeding Bottles & Accessories</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Food</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Bedding</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Gear</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Toys & School Supplies -->
-
-              <div class="MoreOption">
-                <p>Toys & School Supplies</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Toys">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Remote Control Toys</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Soft Toys</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Puzzles</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Board Games</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Learning & Educational Toys</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Baby Toys</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>School Backpacks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>School Supplies</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Books -->
-
-              <div class="MoreOption">
-                <p>Books</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Books">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Academics</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Literature & Fiction</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Non Fiction</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Young Readers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Audio Books</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bangla Language</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sports & Fitness -->
-
-              <div class="MoreOption">
-                <p>Sports & Fitness</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Sports">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Badminton</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cricket</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Football</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Cycling Equipments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Fitness Equipments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gym Gloves</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Dumbbells</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Yoga Equipments</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Music -->
-
-              <div class="MoreOption">
-                <p>Music</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Music">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>Musical Instruments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Music & TV Shows</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Acoustic Guitars</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Keys & Synthesizer</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Microphones</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Studio Equipments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Stage Equipments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>String Instruments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Deshi Instruments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Wind Instruments</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Safety & Hygiene Essentials -->
-
-              <div class="MoreOption">
-                <p>Safety & Hygiene Essentials</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Safety">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Masks</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Sanitizers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Hand Wash</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Gloves</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>PPE Kits </p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Face Shields</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>UV Sterilizer Box</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Safety Goggles</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Vitamins for Immunity</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Auto Accessories -->
-
-              <div class="MoreOption">
-                <p>Auto Accessories</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Auto">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Bike Essentials</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Washing & Cleaning Products</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Vehicles Covers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Car Air Freshener</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Car Bluetooth Devices</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Car Lubricant </p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Car Vacuuam Cleaner</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Car Media Player</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Vehicles Tyres</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>FirstAid Box</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Stationery & Office Supplies  -->
-
-              <div class="MoreOption">
-                <p>Stationery & Office Supplies</p>
-                <i class="fa-solid fa-angle-right"></i>
-
-                <div class="Stationery">
-                  <div class="MoreSubOption_Content">
-                    <div class="MoreSubOption">
-                      <p>View All</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Pens & Gift Sets</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Notebooks & Diaries</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Art Supplies</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Keychains</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Card Holder</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Office Supplies</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Office Equipments</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Desk Organizers</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Party Supplies</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Calculators</p>
-                    </div>
-                    <div class="MoreSubOption">
-                      <p>Top Brand Deals</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </a>
-    </div>
-    <!-- Gift Cards -->
-    <div class="topProductNavbar_Nav">
-      <a href="gift-card.html">
-        <img src="../../front_assets/img/Category/Category 9.png" />
-
-        <br />
-        <a href="#" class="Navlink angledownIcon">
-          Gift Cards
-          <i class="fa-solid fa-angle-down submenuicon"> </i>
-
-          <div class="MoreOptionDisplay_Container">
-            <div class="MoreOption_Content">
-              <div class="MoreOption">
-                <p>Premium Gift Card</p>
-              </div>
-              <div class="MoreOption">
-                <p>Normal Gift Card</p>
-              </div>
-            </div>
-          </div>
-        </a>
-      </a>
-    </div>
   </section>
 
   <section class="topProductNavbar1 mx-4 d-md-block d-md-flex d-sm-block d-sm-flex d-xl-none d-lg-none">
@@ -2056,8 +380,7 @@
     <section class="slider-section mx-lg-5">
       <div id="carouselExampleCaptions" class="mx-lg-5 carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
 
@@ -2089,13 +412,11 @@
 
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -2121,8 +442,7 @@
 
     <!-- banner-2 -->
     <Section class="mx-lg-5 py-3">
-      <div class="mx-lg-5 p-4 d-flex align-items-center justify-content-evenly flex-wrap"
-        style="background-color: #78efbf;border-top-right-radius: 40px; border-bottom-left-radius: 40px;">
+      <div class="mx-lg-5 p-4 d-flex align-items-center justify-content-evenly flex-wrap" style="background-color: #78efbf;border-top-right-radius: 40px; border-bottom-left-radius: 40px;">
         <div class="d-none d-sm-none d-lg-block">
           <h1>Fresh <br>
             Finds <br>
@@ -2144,17 +464,13 @@
 
     <!-- banner-3 -->
     <section class="mx-lg-5">
-      <div
-        class="align-items-center d-flex flex-column-reverse flex-lg-row flex-md-row flex-sm-col justify-content-evenly mx-lg-5"
-        style="background-color: #d9f9ea; border-radius: 30px;">
+      <div class="align-items-center d-flex flex-column-reverse flex-lg-row flex-md-row flex-sm-col justify-content-evenly mx-lg-5" style="background-color: #d9f9ea; border-radius: 30px;">
         <div class="mx-5 p-3">
           <h1>Explore Our Latest Arrivals and Elevate Your Experience!</h1>
           <p class="text-cente text-dark">Dive into the World of Our New Collections!</p>
         </div>
-        <div class="px-md-3 px-sm-3 special"
-          style="background-color: #78efbf; border-bottom-left-radius: 50px; border-top-right-radius: 50px; padding: 0 90px; margin: 15px; position: relative;">
-          <i class="bi bi-arrow-right color-green "
-            style="position: absolute; left: -25px; top: 160px; background-color: #78efbf; border:5px solid #fcf0e1; border-radius: 50%; padding: 15px; -webkit-text-stroke: 3px;"></i>
+        <div class="px-md-3 px-sm-3 special" style="background-color: #78efbf; border-bottom-left-radius: 50px; border-top-right-radius: 50px; padding: 0 90px; margin: 15px; position: relative;">
+          <i class="bi bi-arrow-right color-green " style="position: absolute; left: -25px; top: 160px; background-color: #78efbf; border:5px solid #fcf0e1; border-radius: 50%; padding: 15px; -webkit-text-stroke: 3px;"></i>
           <img style="width: 350px;" src="../../front_assets/img/amjanata-pic-23/amjanata pic-05.png" alt="">
         </div>
       </div>
@@ -2172,12 +488,10 @@
           <div class="product-thumbs">
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/01.webp" class="card-img-top" alt="...">
@@ -2199,12 +513,10 @@
             </div>
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/02.webp" class="card-img-top" alt="...">
@@ -2226,12 +538,10 @@
             </div>
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/03.webp" class="card-img-top" alt="...">
@@ -2253,12 +563,10 @@
             </div>
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/04.webp" class="card-img-top" alt="...">
@@ -2280,12 +588,10 @@
             </div>
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/05.webp" class="card-img-top" alt="...">
@@ -2307,12 +613,10 @@
             </div>
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/06.webp" class="card-img-top" alt="...">
@@ -2334,12 +638,10 @@
             </div>
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/07.webp" class="card-img-top" alt="...">
@@ -2361,12 +663,10 @@
             </div>
             <div class="card">
               <div class="position-relative overflow-hidden">
-                <div
-                  class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+                <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
                   <a href="javascript:;"><i class="bi bi-heart"></i></a>
                   <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
                 </div>
                 <a href="product-details.html">
                   <img src="../../front_assets/img/featured-products/08.webp" class="card-img-top" alt="...">
@@ -2398,8 +698,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light-2" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-01.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 </div>
@@ -2409,8 +708,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light-2" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-02.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 </div>
@@ -2420,8 +718,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light-2" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-03.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 </div>
@@ -2431,8 +728,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light-2" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-04.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 </div>
@@ -2457,8 +753,7 @@
             <div class="col-sm-6 col-md-3 col-lg-4 d-flex justify-content-center mb-3">
               <div class="card bg-skyblue-light" style="width: 20rem; border-width: 0; border-radius: 10px;">
                 <img src="img/amjanata-pic-23/amjanata pic-02.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 </div>
@@ -2467,8 +762,7 @@
             <div class="col-sm-6 col-md-3 col-lg-4 d-flex justify-content-center mb-3">
               <div class="card bg-skyblue-light" style="width: 20rem; border-width: 0; border-radius: 10px;">
                 <img src="img/amjanata-pic-23/amjanata pic-03.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 </div>
@@ -2477,8 +771,7 @@
             <div class="col-sm-6 col-md-3 col-lg-4 d-flex justify-content-center mb-3">
               <div class="card bg-skyblue-light" style="width: 20rem; border-width: 0; border-radius: 10px;">
                 <img src="img/amjanata-pic-23/amjanata pic-04.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 </div>
@@ -2493,8 +786,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="img/amjanata-pic-23/amjanata pic-01.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <div class="text-danger position-relative" style="margin-bottom: 130px;">
                     <p class="mb-0 ps-3 position-absolute">Upto</p>
                     <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -2508,8 +800,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="img/amjanata-pic-23/amjanata pic-02.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <div class="text-danger position-relative" style="margin-bottom: 130px;">
                     <p class="mb-0 ps-3 position-absolute">Upto</p>
                     <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -2524,8 +815,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="img/amjanata-pic-23/amjanata pic-03.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <div class="text-danger position-relative" style="margin-bottom: 130px;">
                     <p class="mb-0 ps-3 position-absolute">Upto</p>
                     <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -2540,8 +830,7 @@
             <div class="size col-sm-6 col-md-6 col-lg-3 d-flex justify-content-center mb-2">
               <div class="card bg-skyblue-light" style="width: 18rem; border-width: 0; border-radius: 10px;">
                 <img src="img/amjanata-pic-23/amjanata pic-04.png" class="card-img-top" alt="...">
-                <div class="card-body"
-                  style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
+                <div class="card-body" style="background-color: #fff;border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; ">
                   <div class="text-danger position-relative" style="margin-bottom: 130px;">
                     <p class="mb-0 ps-3 position-absolute">Upto</p>
                     <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -2565,8 +854,7 @@
     <section class="slider-section mx-lg-5">
       <div id="carouselExampleCaptions" class="mx-lg-5 carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
 
@@ -2598,13 +886,11 @@
 
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -2745,12 +1031,10 @@
       <div class="product-thumbs">
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/01.webp" class="card-img-top" alt="...">
@@ -2772,12 +1056,10 @@
         </div>
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/02.webp" class="card-img-top" alt="...">
@@ -2799,12 +1081,10 @@
         </div>
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/03.webp" class="card-img-top" alt="...">
@@ -2826,12 +1106,10 @@
         </div>
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/04.webp" class="card-img-top" alt="...">
@@ -2853,12 +1131,10 @@
         </div>
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/05.webp" class="card-img-top" alt="...">
@@ -2880,12 +1156,10 @@
         </div>
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/06.webp" class="card-img-top" alt="...">
@@ -2907,12 +1181,10 @@
         </div>
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/07.webp" class="card-img-top" alt="...">
@@ -2934,12 +1206,10 @@
         </div>
         <div class="card">
           <div class="position-relative overflow-hidden">
-            <div
-              class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
+            <div class="product-options d-flex align-items-center justify-content-center gap-2 mx-auto position-absolute bottom-0 start-0 end-0">
               <a href="javascript:;"><i class="bi bi-heart"></i></a>
               <a href="javascript:;"><i class="bi bi-basket3"></i></a>
-              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i
-                  class="bi bi-zoom-in"></i></a>
+              <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewModal"><i class="bi bi-zoom-in"></i></a>
             </div>
             <a href="product-details.html">
               <img src="../../front_assets/img/featured-products/08.webp" class="card-img-top" alt="...">
@@ -3023,8 +1293,7 @@
         <div class="my-2 mx-lg-5">
           <div class="gap-2 justify-content-center justify-content-lg-around row size1">
             <!-- <div class=" d-flex justify-content-center flex-wrap gap-5"> -->
-            <div class="deals col-sm-6 col-md-6 col-lg-3"
-              style="width: 250px; height: 400px; background-color: #D5f9e9; padding: 5px; border-radius: 10px;">
+            <div class="deals col-sm-6 col-md-6 col-lg-3" style="width: 250px; height: 400px; background-color: #D5f9e9; padding: 5px; border-radius: 10px;">
               <div class="text-danger deals-text position-relative" style="margin-bottom: 130px;">
                 <p class="mb-0 ps-3 position-absolute">Upto</p>
                 <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -3032,14 +1301,12 @@
                 <p class="mb-0 fs-6 ps-2 position-absolute fw-bold" style="top: 30px; left: 49px;">off</p>
 
               </div>
-              <div class="card deal mx-auto rounded-circle"
-                style="width: 15rem; background-color: #78efbf; border-width: 0; border-radius: 10px;">
+              <div class="card deal mx-auto rounded-circle" style="width: 15rem; background-color: #78efbf; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-01.png" class="py-3 deals-img" alt="...">
 
               </div>
             </div>
-            <div class="deals col-sm-6 col-md-6 col-lg-3"
-              style="width: 250px; height: 400px;background-color: #fcf0e1; padding: 5px; border-radius: 10px;">
+            <div class="deals col-sm-6 col-md-6 col-lg-3" style="width: 250px; height: 400px;background-color: #fcf0e1; padding: 5px; border-radius: 10px;">
               <div class="text-danger deals-text position-relative" style="margin-bottom: 130px;">
                 <!-- <p class="mb-0 ps-3 position-absolute">Upto</p> -->
                 <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -3047,14 +1314,12 @@
                 <p class="mb-0 fs-6 ps-2 position-absolute fw-bold" style="top: 30px; left: 49px;">off</p>
 
               </div>
-              <div class="card deal mx-auto rounded-circle"
-                style="width: 15rem; background-color: #FEDCB6; border-width: 0; border-radius: 10px;">
+              <div class="card deal mx-auto rounded-circle" style="width: 15rem; background-color: #FEDCB6; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-01.png" class="py-3 deals-img" alt="...">
 
               </div>
             </div>
-            <div class="deals col-sm-6 col-md-6 col-lg-3"
-              style="width: 250px; height: 400px;background-color: #fcf0e1; padding: 5px; border-radius: 10px;">
+            <div class="deals col-sm-6 col-md-6 col-lg-3" style="width: 250px; height: 400px;background-color: #fcf0e1; padding: 5px; border-radius: 10px;">
               <div class="text-danger deals-text position-relative" style="margin-bottom: 130px;">
                 <!-- <p class="mb-0 ps-3 position-absolute">Upto</p> -->
                 <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -3062,14 +1327,12 @@
                 <p class="mb-0 fs-6 ps-2 position-absolute fw-bold" style="top: 30px; left: 49px;">off</p>
 
               </div>
-              <div class="card deal mx-auto rounded-circle"
-                style="width: 15rem; background-color: #FEDCB6; border-width: 0; border-radius: 10px;">
+              <div class="card deal mx-auto rounded-circle" style="width: 15rem; background-color: #FEDCB6; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-01.png" class="py-3 deals-img" alt="...">
 
               </div>
             </div>
-            <div class="deals col-sm-6 col-md-6 col-lg-3"
-              style="width: 250px; height: 400px;background-color: #fcf0e1; padding: 5px; border-radius: 10px;">
+            <div class="deals col-sm-6 col-md-6 col-lg-3" style="width: 250px; height: 400px;background-color: #fcf0e1; padding: 5px; border-radius: 10px;">
               <div class="text-danger deals-text position-relative" style="margin-bottom: 130px;">
                 <!-- <p class="mb-0 ps-3 position-absolute">Upto</p> -->
                 <p class="mb-0 fs-1 ps-2 position-absolute " style="top: 10px;">50</p>
@@ -3077,8 +1340,7 @@
                 <p class="mb-0 fs-6 ps-2 position-absolute fw-bold" style="top: 30px; left: 49px;">off</p>
 
               </div>
-              <div class="card deal mx-auto rounded-circle"
-                style="width: 15rem; background-color: #FEDCB6; border-width: 0; border-radius: 10px;">
+              <div class="card deal mx-auto rounded-circle" style="width: 15rem; background-color: #FEDCB6; border-width: 0; border-radius: 10px;">
                 <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-01.png" class="py-3 deals-img" alt="...">
 
               </div>
@@ -4228,8 +2490,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-26.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-26.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4239,8 +2500,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-27.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-27.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4250,8 +2510,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-28.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-28.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4261,8 +2520,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-29.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-29.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4272,8 +2530,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-30.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-30.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4283,8 +2540,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-31.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-31.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4294,8 +2550,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-32.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-32.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4315,8 +2570,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-34.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-34.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4326,8 +2580,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-36.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-36.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4337,8 +2590,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-37.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-37.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4348,8 +2600,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-38.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-38.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4359,8 +2610,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-39.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-39.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4370,8 +2620,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-40.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-40.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4381,8 +2630,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-33.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-33.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4392,8 +2640,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-42.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-42.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4403,8 +2650,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-13.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-13.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4414,8 +2660,7 @@
               <div class="p-0 border rounded-circle brand-box" style="background-color: #fcf0e1;">
                 <div class="d-flex align-items-center">
                   <a href="javascript:;">
-                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-42.png" class="img-fluid border-img"
-                      alt="">
+                    <img src="../../front_assets/img/amjanata-pic-23/amjanata pic-42.png" class="img-fluid border-img" alt="">
                   </a>
                 </div>
               </div>
@@ -4712,8 +2957,7 @@
   </footer>
 
   <!--start cart-->
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight"
-    aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header bg-section-2">
       <h5 class="mb-0 fw-bold" id="offcanvasRightLabel">8 items in the cart</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -4992,10 +3236,8 @@
                 </div>
                 <div class="cart-buttons mt-3">
                   <div class="buttons d-flex flex-column gap-3 mt-4">
-                    <a href="javascript:;" class="btn btn-lg btn-dark btn-ecomm px-5 py-3 flex-grow-1"><i
-                        class="bi bi-basket2 me-2"></i>Add to Bag</a>
-                    <a href="javascript:;" class="btn btn-lg btn-outline-dark btn-ecomm px-5 py-3"><i
-                        class="bi bi-suit-heart me-2"></i>Wishlist</a>
+                    <a href="javascript:;" class="btn btn-lg btn-dark btn-ecomm px-5 py-3 flex-grow-1"><i class="bi bi-basket2 me-2"></i>Add to Bag</a>
+                    <a href="javascript:;" class="btn btn-lg btn-outline-dark btn-ecomm px-5 py-3"><i class="bi bi-suit-heart me-2"></i>Wishlist</a>
                   </div>
                 </div>
                 <hr class="my-3">
@@ -5039,13 +3281,10 @@
 
   <!-- JavaScript files -->
   <script src="../../front_assets/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
-    integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
   <script src="../../front_assets/js/jquery.min.js"></script>
   <script src="../../front_assets/plugins/slick/slick.min.js"></script>
   <script src="../../front_assets/js/main.js"></script>
