@@ -157,460 +157,162 @@
                                                     <!-- <div class="col-12 col-md-6 col-lg-6 col-xl-6 mb-2">
                                                         <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                                             <label>Parent Category</label>
-                                                            <input type="text" class="form-control" value="" name="category_name" onkeypress="return event.keyCode != 13;">
+                                                            <input type="text" class="form-control" value="" name="parent_category" onkeypress="return event.keyCode != 13;">
                                                         </div>
                                                     </div> -->
 
-                                                    <!-- start -->
-                                                    <style>
-                                                        .wrapper1 {
-                                                            margin: 1em auto;
-                                                            text-align: left;
-                                                        }
-
-                                                        .sample {
-                                                            /* border: 1px solid #eeeeee; */
-                                                            background: #ffffff;
-                                                            max-width: 30em;
-                                                            /* padding: 1em; */
-                                                            margin-bottom: 1em;
-                                                        }
-
-                                                        .custom-select {
-                                                            position: relative;
-                                                        }
-
-                                                        .select-css {
-                                                            text-align: left;
-
-                                                            display: block;
-                                                            font-size: 1em;
-                                                            font-family: sans-serif;
-                                                            font-weight: 700;
-                                                            color: #444;
-                                                            line-height: 1.3;
-                                                            padding: 0.6em 1.4em 0.5em 0.8em;
-                                                            width: 100%;
-                                                            max-width: 100%;
-                                                            box-sizing: border-box;
-                                                            margin: 0;
-                                                            border: 1px solid #aaa;
-                                                            box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-                                                            border-radius: 0.25em;
-                                                            -moz-appearance: none;
-                                                            -webkit-appearance: none;
-                                                            appearance: none;
-                                                            background-color: #fff;
-                                                            position: relative;
-                                                            z-index: 10;
-                                                        }
-
-                                                        .select-css::-ms-expand {
-                                                            display: none;
-                                                        }
-
-                                                        .select-css:hover {
-                                                            border-color: #888;
-                                                        }
-
-                                                        .select-css:focus {
-                                                            border: 1px dashed blue;
-                                                            color: #222;
-                                                            outline: none;
-                                                        }
-
-                                                        .custom-select-icons {
-                                                            position: absolute;
-                                                            top: 0.5em;
-                                                            right: 0.5em;
-                                                            z-index: 20;
-                                                            border: 1px solid white;
-                                                            background: transparent;
-                                                        }
-
-                                                        .custom-select-options {
-                                                            border: 1px solid #aaa;
-                                                            border-radius: 0 0 0.25em 0.25em;
-                                                            line-height: 1.5;
-                                                            margin: 0;
-                                                            margin-top: -0.5em;
-                                                            padding: 0;
-                                                            list-style-type: none;
-                                                            font-weight: normal;
-                                                            cursor: pointer;
-                                                            z-index: 2;
-                                                            position: absolute;
-                                                            width: calc(100% - 1px);
-                                                            background-color: #ffffff;
-                                                        }
-
-                                                        .custom-select-options li {
-                                                            padding: 5px;
-                                                        }
-
-                                                        .custom-select-options li:hover {
-                                                            background: blue;
-                                                            color: #fff;
-                                                            border: 1px solid blue;
-                                                            border-width: 0 0 0 1px;
-                                                        }
-
-                                                        .custom-select-options li:focus {
-                                                            border: 1px solid blue;
-                                                        }
-
-                                                        .icon {
-                                                            fill: ButtonText;
-                                                            pointer-events: none;
-                                                        }
-
-                                                        @media screen and (-ms-high-contrast: active) {
-                                                            .icon {
-                                                                fill: ButtonText;
-                                                            }
-                                                        }
-
-                                                        .hidden-all {
-                                                            display: none;
-                                                        }
-
-                                                        .hidden-visually {
-                                                            position: absolute;
-                                                            width: 1px;
-                                                            height: 1px;
-                                                            padding: 0;
-                                                            overflow: hidden;
-                                                            clip: rect(0, 0, 0, 0);
-                                                            white-space: nowrap;
-                                                            -webkit-clip-path: inset(50%);
-                                                            clip-path: inset(50%);
-                                                            border: 0;
-                                                        }
-                                                    </style>
-
-                                                    <div class="ms-2 col-12 col-md-12 col-lg-12 col-xl-12 mb-1 wrapper1">
-
-                                                        <div class="sample">
-                                                            <label for="custom-select-input">Parent Category</label>
-
-                                                            <div id='custom-select-status' class='hidden-visually' aria-live="polite"></div>
-                                                            <div class="custom-select" id="myCustomSelect">
-                                                                <!-- <input type="text" id="custom-select-input" class="select-css" name="category_name" value=""> -->
-                                                                <input type="text" id="custom-select-input" class="select-css" name="parent_category" value="" aria-autocomplete="both" aria-controls="custom-select-list" value="">
-
-                                                                <span class="custom-select-icons">
-                                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" focusable="false" aria-hidden="true" id="icon-circle-down" class="icon" role="img">
-                                                                        <path d="M16 8c0-4.418-3.582-8-8-8s-8 3.582-8 8 3.582 8 8 8 8-3.582 8-8zM1.5 8c0-3.59 2.91-6.5 6.5-6.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5-6.5-2.91-6.5-6.5z"></path>
-                                                                        <path d="M4.957 5.543l-1.414 1.414 4.457 4.457 4.457-4.457-1.414-1.414-3.043 3.043z" fill="blue"></path>
-                                                                    </svg>
-                                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" focusable="false" aria-hidden="true" id="icon-circle-up" class="icon hidden-all" role="img">
-                                                                        <path d="M0 8c0 4.418 3.582 8 8 8s8-3.582 8-8-3.582-8-8-8-8 3.582-8 8zM14.5 8c0 3.59-2.91 6.5-6.5 6.5s-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5z"></path>
-                                                                        <path d="M11.043 10.457l1.414-1.414-4.457-4.457-4.457 4.457 1.414 1.414 3.043-3.043z" fill="blue"></path>
-                                                                    </svg>
-                                                                </span>
-
-                                                                <ul class="custom-select-options hidden-all" id="custom-select-list">
-                                                                    <% records.forEach(all=> { %>
-                                                                        <li><strong>
-                                                                                <%= all.parent_category.parent_category %>
-                                                                            </strong></li>
-                                                                        <% }); %>
-                                                                </ul>
+                                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 mb-2">
+                                                        <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
+                                                            <label class="" style="">Parent Category</label>
+                                                            <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
+                                                                <input type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1000, null)" autocomplete="off" id="contentsTitleInput_1000" name="parent_category" onkeypress="return event.keyCode != 13;">
+                                                                <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1000" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
+                                                                    <% records.forEach(objects=>{ %>
+                                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
+                                                                            <%=objects.parent_category.parent_category%>
+                                                                        </div>
+                                                                        <!-- <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Kitchen & Dining</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Health & Beauty</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Baby & Kids</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Shaver & Trimmer</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Electronics</div> -->
+                                                                        <% });%>
+                                                                </div>
                                                             </div>
                                                         </div>
-
                                                     </div>
 
+                                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 mb-2">
+                                                        <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
+                                                            <label class="" style="">Sub Category</label>
+                                                            <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
+                                                                <input type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1002, null)" autocomplete="off" id="contentsTitleInput_1002" name="sub_category" onkeypress="return event.keyCode != 13;">
+                                                                <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1002" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
+                                                                    <% records.forEach(objects=>{ %>
+                                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
+                                                                            <%=objects.sub_category.sub_category%>
+                                                                        </div>
+                                                                        <!-- <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Kitchen & Dining</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Health & Beauty</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Baby & Kids</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Shaver & Trimmer</div>
+                                                                                                                    <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Electronics</div> -->
+                                                                        <% });%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 mb-2">
+                                                        <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
+                                                            <label class="" style="">Category</label>
+                                                            <div class=" position-relative single-contact-info productName" style="margin-top: 7px">
+                                                                <input type="text" class="form-control " placeholder="Select Type" onclick="showContentDropdown(1003, null)" autocomplete="off" id="contentsTitleInput_1003" name="category" onkeypress="return event.keyCode != 13;">
+                                                                <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1003" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
+                                                                    <% records.forEach(objects=>{ %>
+                                                                        <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
+                                                                            <%=objects.category.category%>
+                                                                        </div>
+                                                                        <% });%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
                                                     <script>
-                                                        // SETUP
-                                                        // assign names to things we'll need to use more than once
-                                                        const csSelector = document.querySelector('#myCustomSelect') // the input, svg and ul as a group
-                                                        const csInput = csSelector.querySelector('input')
-                                                        const csList = csSelector.querySelector('ul')
-                                                        const csOptions = csList.querySelectorAll('li')
-                                                        const csIcons = csSelector.querySelectorAll('svg')
-                                                        const csStatus = document.querySelector('#custom-select-status')
-                                                        const aOptions = Array.from(csOptions)
+                                                        let findInput = 0;
+                                                        let oldDropdownContent = '';
 
-                                                        // when JS is loaded, set up our starting point
-                                                        // if JS fails to load, the custom select remains a plain text input
-                                                        // create and set start point for the state tracker
-                                                        let csState = "initial"
-                                                        // inform assistive tech (screen readers) of the names & roles of the elements in our group
-                                                        csSelector.setAttribute('role', 'combobox')
-                                                        csSelector.setAttribute('aria-haspopup', 'listbox')
-                                                        csSelector.setAttribute('aria-owns', 'custom-select-list') // container owns the list...
-                                                        csInput.setAttribute('aria-autocomplete', 'both')
-                                                        csInput.setAttribute('aria-controls', 'custom-select-list') // ...but the input controls it
-                                                        csList.setAttribute('role', 'listbox')
-                                                        csOptions.forEach(function (option) {
-                                                            option.setAttribute('role', 'option')
-                                                            option.setAttribute('tabindex', "-1")  // make li elements keyboard focusable by script only
-                                                        })
-                                                        // set up a message to keep screen reader users informed of what the custom input is for/doing
-                                                        csStatus.textContent = csOptions.length + " options available. Arrow down to browse or start typing to filter."
-
-                                                        // EVENTS
-                                                        csSelector.addEventListener('click', function (e) {
-                                                            const currentFocus = findFocus();
-                                                            const clickedElement = e.target;
-
-                                                            if (clickedElement.tagName === 'LI') {
-                                                                makeChoice(clickedElement);
-                                                                toggleList('Shut');
-                                                                setState('closed');
-                                                            } else {
-                                                                switch (csState) {
-                                                                    case 'initial':
-                                                                        toggleList('Open');
-                                                                        setState('opened');
-                                                                        break;
-                                                                    case 'opened':
-                                                                        if (currentFocus === csInput) {
-                                                                            toggleList('Shut');
-                                                                            setState('initial');
-                                                                        } else if (currentFocus.tagName === 'LI') {
-                                                                            makeChoice(currentFocus);
-                                                                            toggleList('Shut');
-                                                                            setState('closed');
-                                                                        }
-                                                                        break;
-                                                                    case 'filtered':
-                                                                        if (currentFocus.tagName === 'LI') {
-                                                                            makeChoice(currentFocus);
-                                                                            toggleList('Shut');
-                                                                            setState('closed');
-                                                                        }
-                                                                        break;
-                                                                    case 'closed':
-                                                                        toggleList('Open');
-                                                                        setState('filtered');
-                                                                        break;
-                                                                }
+                                                        const showContentDropdown = (id, num) => {
+                                                            let dropdownMenu_s;
+                                                            if (num) {
+                                                                dropdownMenu_s = document.getElementById(`dropdownMenu_${id}_${num}`);
                                                             }
-                                                        });
-                                                        csSelector.addEventListener('keyup', function (e) {
-                                                            doKeyAction(e.key)
-                                                        })
+                                                            else {
+                                                                dropdownMenu_s = document.getElementById(`dropdownMenu_${id}`);
+                                                            }
+                                                            if (oldDropdownContent && !oldDropdownContent.classList.contains('d-none') && findInput != id) {
+                                                                oldDropdownContent.classList.add('d-none')
+                                                            }
+                                                            dropdownMenu_s.classList.toggle("d-none");
+                                                            findInput = id;
+                                                            oldDropdownContent = dropdownMenu_s
+                                                        };
 
-                                                        document.addEventListener('click', function (e) {
-                                                            if (!e.target.closest('#myCustomSelect')) {
-                                                                // click outside of the custom group
-                                                                toggleList('Shut')
-                                                                setState('initial')
+                                                        document.addEventListener("click", function (event) {
+                                                            var target = event.target
+                                                            let dropdownBox = document.querySelectorAll(".dropdownBox");
+                                                            if (target.tagName != 'INPUT') {
+                                                                for (let i = 0; i < dropdownBox.length; i++) {
+                                                                    if (!dropdownBox[i].classList.contains('d-none')) {
+                                                                        dropdownBox[i].classList.add("d-none");
+                                                                    }
+                                                                }
                                                             }
                                                         })
 
-                                                        // FUNCTIONS 
-                                                        function toggleList(whichWay) {
-                                                            if (whichWay === 'Open') {
-                                                                csList.classList.remove('hidden-all')
-                                                                csSelector.setAttribute('aria-expanded', 'true')
-                                                            } else { // === 'Shut'
-                                                                csList.classList.add('hidden-all')
-                                                                csSelector.setAttribute('aria-expanded', 'false')
-                                                            }
-                                                        }
+                                                        let allInputTags = document.querySelectorAll('input');
 
-                                                        function findFocus() {
-                                                            const focusPoint = document.activeElement
-                                                            return focusPoint
-                                                        }
-
-                                                        function moveFocus(fromHere, toThere) {
-                                                            // grab the currently showing options, which might have been filtered
-                                                            const aCurrentOptions = aOptions.filter(function (option) {
-                                                                if (option.style.display === '') {
-                                                                    return true
+                                                        $(allInputTags).each(function (index, element) {
+                                                            element.addEventListener("input", function (e) {
+                                                                let dropdownBox = document.querySelectorAll(".dropdownBox");
+                                                                for (let i = 0; i < dropdownBox.length; i++) {
+                                                                    console.log("dropdownBox[i]", dropdownBox[i]);
+                                                                    if (!dropdownBox[i].classList.contains('d-none')) {
+                                                                        dropdownBox[i].classList.add("d-none");
+                                                                    }
                                                                 }
                                                             })
-                                                            // don't move if all options have been filtered out
-                                                            if (aCurrentOptions.length === 0) {
-                                                                return
+                                                        })
+
+
+                                                        function selectOption(tag, num) {
+                                                            console.log(tag.innerText);
+                                                            let textInput;
+                                                            if (num) {
+                                                                textInput = document.getElementById(`contentsTitleInput_${findInput}_${num}`);
                                                             }
-                                                            if (toThere === 'input') {
-                                                                csInput.focus()
+                                                            else {
+                                                                textInput = document.getElementById(`contentsTitleInput_${findInput}`);
                                                             }
-                                                            // possible start points
-                                                            switch (fromHere) {
-                                                                case csInput:
-                                                                    if (toThere === 'forward') {
-                                                                        aCurrentOptions[0].focus()
-                                                                    } else if (toThere === 'back') {
-                                                                        aCurrentOptions[aCurrentOptions.length - 1].focus()
+                                                            let text = tag.innerText;
+                                                            // console.log(text);
+                                                            textInput.value = text;
+
+                                                            let parent = tag.parentNode;
+                                                            parent.classList.add("d-none");
+
+                                                            let tagInnerText = tag.innerText.trim();
+                                                            // console.log(tagInnerText);
+
+                                                            let sku = document.querySelector('#sku');
+                                                            let upc = document.querySelector('#upc');
+
+                                                            axios.post('/product/get_category', { tagInnerText })
+                                                                .then(response => {
+                                                                    console.log('hhh');
+                                                                    console.log(response.data);
+                                                                    if (response.data.success) {
+                                                                        upc.value = response.data.u_code;
+                                                                        let timestamp = Date.now().toString();
+                                                                        sku.value = response.data.u_code + timestamp;
                                                                     }
-                                                                    break
-                                                                case csOptions[0]:
-                                                                    if (toThere === 'forward') {
-                                                                        aCurrentOptions[1].focus()
-                                                                    } else if (toThere === 'back') {
-                                                                        csInput.focus()
-                                                                    }
-                                                                    break
-                                                                case csOptions[csOptions.length - 1]:
-                                                                    if (toThere === 'forward') {
-                                                                        aCurrentOptions[0].focus()
-                                                                    } else if (toThere === 'back') {
-                                                                        aCurrentOptions[aCurrentOptions.length - 2].focus()
-                                                                    }
-                                                                    break
-                                                                default: // middle list or filtered items 
-                                                                    const currentItem = findFocus()
-                                                                    const whichOne = aCurrentOptions.indexOf(currentItem)
-                                                                    if (toThere === 'forward') {
-                                                                        const nextOne = aCurrentOptions[whichOne + 1]
-                                                                        nextOne.focus()
-                                                                    } else if (toThere === 'back' && whichOne > 0) {
-                                                                        const previousOne = aCurrentOptions[whichOne - 1]
-                                                                        previousOne.focus()
-                                                                    } else { // if whichOne = 0
-                                                                        csInput.focus()
-                                                                    }
-                                                                    break
-                                                            }
+                                                                })
+                                                                .catch(error => {
+                                                                    console.error('Error:', error);
+                                                                });
+
+
                                                         }
 
-                                                        function doFilter() {
-                                                            const terms = csInput.value
-                                                            const aFilteredOptions = aOptions.filter(function (option) {
-                                                                if (option.innerText.toUpperCase().startsWith(terms.toUpperCase())) {
-                                                                    return true
-                                                                }
-                                                            })
-                                                            csOptions.forEach(option => option.style.display = "none")
-                                                            aFilteredOptions.forEach(function (option) {
-                                                                option.style.display = ""
-                                                            })
-                                                            setState('filtered')
-                                                            updateStatus(aFilteredOptions.length)
-                                                        }
-
-                                                        function updateStatus(howMany) {
-                                                            csStatus.textContent = howMany + " options available."
-                                                        }
-
-                                                        function makeChoice(whichOption) {
-                                                            const optionTitle = whichOption.querySelector('strong')
-                                                            csInput.value = optionTitle.textContent
-                                                            moveFocus(document.activeElement, 'input')
-                                                            // update aria-selected, if using
-                                                        }
-
-                                                        function setState(newState) {
-                                                            switch (newState) {
-                                                                case 'initial':
-                                                                    csState = 'initial'
-                                                                    break
-                                                                case 'opened':
-                                                                    csState = 'opened'
-                                                                    break
-                                                                case 'filtered':
-                                                                    csState = 'filtered'
-                                                                    break
-                                                                case 'closed':
-                                                                    csState = 'closed'
-                                                            }
-                                                            // console.log({csState})
-                                                        }
-
-                                                        function doKeyAction(whichKey) {
-                                                            const currentFocus = findFocus()
-                                                            switch (whichKey) {
-                                                                case 'Enter':
-                                                                    if (csState === 'initial') {
-                                                                        // if state = initial, toggleOpen and set state to opened
-                                                                        toggleList('Open')
-                                                                        setState('opened')
-                                                                    } else if (csState === 'opened' && currentFocus.tagName === 'LI') {
-                                                                        // if state = opened and focus on list, makeChoice and set state to closed
-                                                                        makeChoice(currentFocus)
-                                                                        toggleList('Shut')
-                                                                        setState('closed')
-                                                                    } else if (csState === 'opened' && currentFocus === csInput) {
-                                                                        // if state = opened and focus on input, close it
-                                                                        toggleList('Shut')
-                                                                        setState('closed')
-                                                                    } else if (csState === 'filtered' && currentFocus.tagName === 'LI') {
-                                                                        // if state = filtered and focus on list, makeChoice and set state to closed
-                                                                        makeChoice(currentFocus)
-                                                                        toggleList('Shut')
-                                                                        setState('closed')
-                                                                    } else if (csState === 'filtered' && currentFocus === csInput) {
-                                                                        // if state = filtered and focus on input, set state to opened
-                                                                        toggleList('Open')
-                                                                        setState('opened')
-                                                                    } else { // i.e. csState is closed, or csState is opened/filtered but other focus point?
-                                                                        // if state = closed, set state to filtered? i.e. open but keep existing input? 
-                                                                        toggleList('Open')
-                                                                        setState('filtered')
-                                                                    }
-                                                                    break
-
-                                                                case 'Escape':
-                                                                    // if state = initial, do nothing
-                                                                    // if state = opened or filtered, set state to initial
-                                                                    // if state = closed, do nothing
-                                                                    if (csState === 'opened' || csState === 'filtered') {
-                                                                        toggleList('Shut')
-                                                                        setState('initial')
-                                                                    }
-                                                                    break
-
-                                                                case 'ArrowDown':
-                                                                    if (csState === 'initial' || csState === 'closed') {
-                                                                        // if state = initial or closed, set state to opened and moveFocus to first
-                                                                        toggleList('Open')
-                                                                        moveFocus(csInput, 'forward')
-                                                                        setState('opened')
-                                                                    } else {
-                                                                        // if state = opened and focus on input, moveFocus to first
-                                                                        // if state = opened and focus on list, moveFocus to next/first
-                                                                        // if state = filtered and focus on input, moveFocus to first
-                                                                        // if state = filtered and focus on list, moveFocus to next/first
-                                                                        toggleList('Open')
-                                                                        moveFocus(currentFocus, 'forward')
-                                                                    }
-                                                                    break
-                                                                case 'ArrowUp':
-                                                                    if (csState === 'initial' || csState === 'closed') {
-                                                                        // if state = initial, set state to opened and moveFocus to last
-                                                                        // if state = closed, set state to opened and moveFocus to last
-                                                                        toggleList('Open')
-                                                                        moveFocus(csInput, 'back')
-                                                                        setState('opened')
-                                                                    } else {
-                                                                        // if state = opened and focus on input, moveFocus to last
-                                                                        // if state = opened and focus on list, moveFocus to prev/last
-                                                                        // if state = filtered and focus on input, moveFocus to last
-                                                                        // if state = filtered and focus on list, moveFocus to prev/last
-                                                                        moveFocus(currentFocus, 'back')
-                                                                    }
-                                                                    break
-                                                                default:
-                                                                    if (csState === 'initial') {
-                                                                        // if state = initial, toggle open, doFilter and set state to filtered
-                                                                        toggleList('Open')
-                                                                        doFilter()
-                                                                        setState('filtered')
-                                                                    } else if (csState === 'opened') {
-                                                                        // if state = opened, doFilter and set state to filtered
-                                                                        doFilter()
-                                                                        setState('filtered')
-                                                                    } else if (csState === 'closed') {
-                                                                        // if state = closed, doFilter and set state to filtered
-                                                                        doFilter()
-                                                                        setState('filtered')
-                                                                    } else { // already filtered
-                                                                        doFilter()
-                                                                    }
-                                                                    break
-                                                            }
-                                                        }
                                                     </script>
-                                                    <!-- end -->
 
-
-                                                    <div class="col-12 col-md-12 col-lg-12 col-xl-12 mb-2 wrapper1">
+                                                    <!-- <div class="col-12 col-md-12 col-lg-12 col-xl-12 mb-2 wrapper1">
                                                         <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
                                                             <label>Sub Category</label>
                                                             <input type="text" class="form-control" value="" name="sub_category" onkeypress="return event.keyCode != 13;">
@@ -622,7 +324,7 @@
                                                             <label>Category</label>
                                                             <input type="text" class="form-control" value="" name="category" onkeypress="return event.keyCode != 13;">
                                                         </div>
-                                                    </div>
+                                                    </div> -->
 
                                                 </div>
                                             </div>

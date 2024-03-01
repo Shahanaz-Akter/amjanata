@@ -90,40 +90,83 @@ const category = async (req, res) => {
     // let filteredSubRecords = record2.filter(cate => record.some(parent => parent._id.equals(cate.parent_category_id)));
     // console.log(filteredSubRecords);
 
-
-
     res.render('product/category.ejs', { upc_code, sku_code, records });
 }
 
 const postCategory = async (req, res) => {
     let { parent_category, sub_category, category, upc_code } = req.body;
+    console.log(parent_category.length);
 
     try {
-        let parent = await parentCategory.create({
-            category_image: req.files['category_image'] ? '/front_assets/new_images/' + req.files['category_image'][0].filename : null,
-            parent_category: parent_category,
-            upc_code: upc_code,
-        });
+        let parent_cat = await parentCategory.findOne({ parent_category: parent_category });
+        console.log(parent_cat);
 
+        let sub_cat = await subCategory.findOne({ sub_category: sub_category });
+        console.log(sub_cat);
+
+        let cat = await Category.findOne({ category: category });
+        console.log(cat);
+
+        let parent, category1, category2;
+        let parent_c_id, sub_c_id, c_id;
+
+        if (!(parent_cat)) {
+            parent = await parentCategory.create({
+                category_image: req.files['category_image'] ? '/front_assets/new_images/' + req.files['category_image'][0].filename : null,
+                parent_category: parent_category,
+                upc_code: upc_code,
+            });
+        }
+        else {
+            parent_c_id = parent_cat._id;
+        }
+
+        if (!(sub_cat)) {
+            category1 = await subCategory.create({
+                parent_category_id: parent._id,
+                sub_category: sub_category,
+            });
+        }
+        else {
+            parent_c_id = parent_c_id._id;
+            sub_c_id = sub_cat._id;
+
+
+        }
+        if (!(cat)) {
+            category2 = await Category.create({
+                parent_category_id: parent._id,
+                sub_category_id: category1._id,
+                category: category,
+            });
+        }
+        else {
+
+            parent_c_id = parent_c_id._id;
+            sub_c_id = sub_cat._id;
+        }
         // console.log(parentCategory._id);
 
-        let category1 = await subCategory.create({
-            parent_category_id: parent._id,
-            sub_category: sub_category,
-        });
+        // let category1 = await subCategory.create({
+        //     parent_category_id: parent_cat._id,
+        //     sub_category: sub_category,
+        // });
 
-        let category2 = await Category.create({
-            parent_category_id: parent._id,
-            sub_category_id: category1._id,
-            category: category,
-        });
+        // let category2 = await Category.create({
+        //     parent_category_id: parent._id,
+        //     sub_category_id: category1._id,
+        //     category: category,
+        // });
 
-        res.redirect('/product/category');
+        // res.redirect('/product/category');
     }
     catch (err) {
         console.log(err);
         res.redirect('/product/category');
     }
+
+    res.redirect('/product/category');
+
 }
 
 const addProduct = async (req, res) => {
