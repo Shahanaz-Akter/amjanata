@@ -61,8 +61,7 @@ const category = async (req, res) => {
         }
     ]);
 
-    // console.log(records);
-
+    console.log(records);
 
     if (record.length > 0) {
         const latestCategory = await parentCategory.findOne({}).sort({ createdAt: -1 });
@@ -94,6 +93,8 @@ const category = async (req, res) => {
 }
 
 const postCategory = async (req, res) => {
+    let parent_c_id, sub_c_id, c_id;
+
     let { parent_category, sub_category, category, upc_code } = req.body;
     console.log(parent_category.length);
 
@@ -108,14 +109,15 @@ const postCategory = async (req, res) => {
         console.log(cat);
 
         let parent, category1, category2;
-        let parent_c_id, sub_c_id, c_id;
 
         if (!(parent_cat)) {
+
             parent = await parentCategory.create({
                 category_image: req.files['category_image'] ? '/front_assets/new_images/' + req.files['category_image'][0].filename : null,
                 parent_category: parent_category,
                 upc_code: upc_code,
             });
+            parent_c_id = parent._id;
         }
         else {
             parent_c_id = parent_cat._id;
@@ -123,27 +125,28 @@ const postCategory = async (req, res) => {
 
         if (!(sub_cat)) {
             category1 = await subCategory.create({
-                parent_category_id: parent._id,
+                parent_category_id: parent_c_id,
                 sub_category: sub_category,
             });
+            sub_c_id=category1._id;
+
         }
         else {
-            parent_c_id = parent_c_id._id;
-            sub_c_id = sub_cat._id;
-
-
+            sub_c_id=sub_cat._id;
+            
         }
-        if (!(cat)) {
+        
+        if(!(cat)) {
             category2 = await Category.create({
-                parent_category_id: parent._id,
-                sub_category_id: category1._id,
+                parent_category_id: parent_c_id,
+                sub_category_id: sub_c_id,
                 category: category,
             });
+            c_id=category2._id;
         }
-        else {
 
-            parent_c_id = parent_c_id._id;
-            sub_c_id = sub_cat._id;
+        else {
+            c_id=cat._id; //no need
         }
         // console.log(parentCategory._id);
 
