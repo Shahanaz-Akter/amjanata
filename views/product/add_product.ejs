@@ -1018,7 +1018,7 @@
                                                     <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1000" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
                                                         <% data.forEach(objects=>{ %>
                                                             <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
-                                                                <%=objects.parent_category%>
+                                                                <%=objects.parent_category.parent_category%>
                                                             </div>
                                                             <!-- <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
                                                             <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
@@ -1042,7 +1042,7 @@
                                                     <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox" id="dropdownMenu_1002" style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
                                                         <% data.forEach(objects=>{ %>
                                                             <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">
-                                                                <%=objects.sub_category%>
+                                                                <%=objects.sub_category.sub_category%>
                                                             </div>
                                                             <!-- <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Womens and Girls Fashion</div>
                                                             <div class="content_dropdown-item p-2" onclick="selectOption(this, null)">Home and Gadgets</div>
@@ -1082,6 +1082,18 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label for="brand"> Brands</label>
+                                                <input type="text" class="form-control" placeholder="brand" name="brand" id="brand" onkeypress="return event.keyCode != 13;">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
+                                            <div class="form-group" style="background-color: white; border-radius: 5px; padding:10px">
+                                                <label for="color"> Color</label>
+                                                <input type="text" class="form-control" placeholder="Color" name="color" id="color" onkeypress="return event.keyCode != 13;">
+                                            </div>
+                                        </div>
                                         <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-2">
                                             <div class="form-group  position-relative" style="background-color: white; border-radius: 5px; padding:10px">
                                                 <label class="" style="">Product Types</label>

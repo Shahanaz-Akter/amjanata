@@ -7,6 +7,16 @@ const productSchema = new mongoose.Schema({
         unique: false
 
     },
+    brand: {
+        type: String,
+        required: false,
+        unique: false
+    },
+    color: {
+        type: String,
+        required: false,
+        unique: false
+    },
     buying_price: {
         type: Number,
         required: true,

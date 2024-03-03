@@ -128,25 +128,25 @@ const postCategory = async (req, res) => {
                 parent_category_id: parent_c_id,
                 sub_category: sub_category,
             });
-            sub_c_id=category1._id;
+            sub_c_id = category1._id;
 
         }
         else {
-            sub_c_id=sub_cat._id;
-            
+            sub_c_id = sub_cat._id;
+
         }
-        
-        if(!(cat)) {
+
+        if (!(cat)) {
             category2 = await Category.create({
                 parent_category_id: parent_c_id,
                 sub_category_id: sub_c_id,
                 category: category,
             });
-            c_id=category2._id;
+            c_id = category2._id;
         }
 
         else {
-            c_id=cat._id; //no need
+            c_id = cat._id; //no need
         }
         // console.log(parentCategory._id);
 
@@ -228,17 +228,49 @@ const addProduct = async (req, res) => {
 
 const manualAddProduct = async (req, res) => {
     // console.log('hi');
-    let data = await Category.find({});
+    // let data = await Category.find({});
+    let data = await Category.aggregate([
+        {
+            $addFields: {
+                parent_category_id: { $toObjectId: "$parent_category_id" },
+                sub_category_id: { $toObjectId: "$sub_category_id" }
+            }
+        },
+        {
+            $lookup: {
+                from: "parentcategories",
+                localField: "parent_category_id",
+                foreignField: "_id",
+                as: "parent_category"
+            }
+        },
+        {
+            $unwind: "$parent_category"
+        },
+        {
+            $lookup: {
+                from: "subcategories",
+                localField: "sub_category_id",
+                foreignField: "_id",
+                as: "sub_category"
+            }
+        },
+        {
+            $unwind: "$sub_category"
+        }
+    ]);
     // console.log(data);
     res.render('product/add_product.ejs', { data });
 };
 
 const postAddProduct = async (req, res) => {
-
-    let sku, upc;
-
     try {
-        const { sku_code, upc_code, name, parent_category, sub_category, category, product_type, buying_price, selling_price, discount, date, total_qty, price, old_price, description, colorVariants, sizeVariants } = req.body;
+        let sku, upc;
+        const { sku_code, upc_code, name, brand, color, parent_category, sub_category, category, product_type, buying_price, selling_price, discount, date, total_qty, price, old_price, description, colorVariants, sizeVariants } = req.body;
+        console.log('kodu');
+        // console.log(upc_code);
+        // console.log(sku_code);
+
         let sec_img = [];
         let img = req.files['secondary_image'];
 
@@ -252,8 +284,14 @@ const postAddProduct = async (req, res) => {
         }
 
         if (upc_code === '') {
-            let latestCategory = await Category.findOne({}).sort({ createdAt: -1 });
+            let latestCategory = await parentCategory.findOne({}).sort({ createdAt: -1 });
+            console.log('Modhu');
+
+            console.log(latestCategory);
+
             let latest_upc_code = parseInt(latestCategory.upc_code);
+            console.log('latest_upc_code', latest_upc_code);
+
             // console.log('before');
             // console.log(latest_upc_code);
 
@@ -271,12 +309,16 @@ const postAddProduct = async (req, res) => {
 
             // Concatenate the UPC code with the timestamp to create the SKU code
             sku = upc + timestamp;
+            console.log(upc);
+            console.log(sku);
         }
 
         let result = {
             'sku_code': sku_code ? sku_code : sku,
             'upc_code': upc_code ? upc_code : upc,
             'name': name,
+            'brand': brand,
+            'color': color,
             'parent_category': parent_category ? parent_category : null,
             'sub_category': sub_category ? sub_category : null,
             'category': category ? category : null,
@@ -296,7 +338,8 @@ const postAddProduct = async (req, res) => {
             'sizeVariants': sizeVariants ? sizeVariants : null,
             'product_code': Math.floor(Math.random() * 1000) + 1,
         }
-        // console.log(result);
+
+        console.log(result);
         await Product.create(result);
 
 
@@ -323,7 +366,7 @@ const getCategory = async (req, res) => {
         let { tagInnerText } = req.body;
         console.log(tagInnerText);
 
-        let category = await Category.findOne({ parent_category: tagInnerText });
+        let category = await parentCategory.findOne({ parent_category: tagInnerText });
 
         let upc_code = category.upc_code;
 
